@@ -1,0 +1,751 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端工程化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这几天学习下了webpack,也做了demo,大概也了解webpack如何配置了…此篇是学习笔记…为了巩固刚学的知识..">
+<meta name="keywords" content="前端工程化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack笔记">
+<meta property="og:url" content="http://yoursite.com/2017/07/25/webpack/index.html">
+<meta property="og:site_name" content="Cpt&#39;s Blog">
+<meta property="og:description" content="这几天学习下了webpack,也做了demo,大概也了解webpack如何配置了…此篇是学习笔记…为了巩固刚学的知识..">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fhyoffw4egj206w0ayglx.jpg">
+<meta property="og:image" content="http://osuuzm0m8.bkt.clouddn.com/webpack.png">
+<meta property="og:updated_time" content="2018-03-12T15:19:58.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack笔记">
+<meta name="twitter:description" content="这几天学习下了webpack,也做了demo,大概也了解webpack如何配置了…此篇是学习笔记…为了巩固刚学的知识..">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fhyoffw4egj206w0ayglx.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/25/webpack/"/>
+
+  <title> webpack笔记 | Cpt's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="site-title">Cpt's Blog</span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love life, Love Basketball, Love D-wade</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                webpack笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-25T00:00:00+08:00" content="2017-07-25">
+              2017-07-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这几天学习下了webpack,也做了demo,大概也了解webpack如何配置了…此篇是学习笔记…为了巩固刚学的知识..<br><a id="more"></a><br>这次使用的是webpack的新版本3.x</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>新建一个文件夹， 使用<code>npm init</code> 快速配置package.json</p>
+<p>文件目录是这样的… src用来放资源文件, build用来放打包后的文件. </p>
+<p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fhyoffw4egj206w0ayglx.jpg" alt=""></p>
+<h3 id="安装-webpack"><a href="#安装-webpack" class="headerlink" title="安装 webpack"></a>安装 webpack</h3><p>安装webpack &amp; webpack-dev-server<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack webpack-dev-server--save-v</span><br></pre></td></tr></table></figure></p>
+<p>安装webpack-dev-server（开发服务器)用于开发，便于调试..可以实时监听数据改变并刷新页面（live reloading）</p>
+<p>至于 这里<code>--save</code>和 <code>--save-v</code>的区别<br><code>--save</code> 自动把模块和版本号添加到package.json配置文件的dependencies键对上<br><code>--save-v</code> 自动把模块和版本号添加到package.json的devdependencies键对上<br>devdependencies下列出的模块是开发时用的，它们不会被部署到生产环境中，dependencies下的模块，则是生产环境中需要的依赖。(dev指的是开发的意思, prod是生产production的缩写)</p>
+<p>永远不要在生产环境中使用开发工具…(我这里用在开发环境中的有webpack-dev-server)</p>
+<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><p>在项目目录里新建一个<code>webpack.config.js</code>文件用来配置webpack.<br>webpack主要核心的东西就是 <code>entry(入口)</code>, <code>output(出口)</code>, <code>loader</code>, <code>plugins(插件)</code></p>
+<blockquote>
+<p>webpack工作概念: 当 webpack 处理应用程序时，它会递归地构建一个<strong>关系依赖图</strong>,其中包含程序需要的每个模块,然后将这些模块打包成少量的bundle,通常只有一个文件,再由浏览器加载..</p>
+</blockquote>
+<h3 id="entry（入口文件）"><a href="#entry（入口文件）" class="headerlink" title="entry（入口文件）"></a>entry（入口文件）</h3><p>webpack创建关系依赖图,图的起点称作<strong>入口起点</strong>,它告诉webpack从哪里开始,并根据<strong>关系依赖图</strong>来确定需要打包的内容.也可以称作启动文件.<br>单页面应用只有一个入口起点,多页面应用就有多个入口起点.  </p>
+<p><code>webpack-config.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">    home:  __dirname + <span class="string">'/home.js'</span>,   <span class="comment">//__dirname是node.js一个全局变量,指的是当前模块的目录名字.</span></span><br><span class="line">    about: __dirname + <span class="string">'/about.js'</span>,</span><br><span class="line">    setting: __dirname + <span class="string">'/setting.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>只有一个入口文件可以写成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">entry: __dirname + <span class="string">'/src/index.js'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="output-输出"><a href="#output-输出" class="headerlink" title="output (输出)"></a>output (输出)</h3><p><strong>输出你所打包的内容</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">	path: __dirname + <span class="string">"/build"</span>,  <span class="comment">//路径</span></span><br><span class="line">	filename: <span class="string">"bundle.js"</span>		 <span class="comment">//文件名</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="module-模块"><a href="#module-模块" class="headerlink" title="module 模块"></a>module 模块</h3><p>在模块化编程中，开发者将程序分解成离散功能块，并称之为模块<br>webpack把每个文件(.css,.html, .scss, .jpg, .png etc.)都作为模块处理, 然而,<strong>webpack自身只理解JavaScript</strong>  </p>
+<p>webpack的关系依赖图就是各个模块之间的依赖关系,模块之间的依赖关系可以通过这几种方式确定.  </p>
+<ol>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ES6</a> 的 <code>import</code>语句  </li>
+<li><a href="http://javascript.ruanyifeng.com/nodejs/module.html" target="_blank" rel="noopener">commonJS</a> 的<code>require()</code>语句  </li>
+<li><a href="http://zhaoda.net/webpack-handbook/amd.html" target="_blank" rel="noopener">AMD</a>的 <code>define</code>和<code>require</code>语句  </li>
+<li>css/less/sass文件中的 <code>@import</code>语句  </li>
+<li>样式(<code>url(...)</code>)或 HTML 文件(<code>&lt;img src=...&gt;</code>)中的图片链接(image url)</li>
+</ol>
+<h4 id="module-rules"><a href="#module-rules" class="headerlink" title="module.rules"></a>module.rules</h4><p>之前版本的webpack是使用loaders的，webpack 2.x之后就使用rules了。<br><strong>rules</strong> ：(数组) 创建模块时，匹配请求的规则数组，这些规则能够对模块应用loader。  (loader又是什么)</p>
+<h4 id="loader又是什么"><a href="#loader又是什么" class="headerlink" title="loader又是什么"></a>loader又是什么</h4><p>loader描述了webpack如何处理非JavaScript(non-JavaScript)模块，并且在bundle中引入这些依赖.<br>loader 有两个目标  </p>
+<ol>
+<li>识别出应该被对应的loader进行转换的那些文件(test属性)  </li>
+<li>使用某个loader转换这些文件,使其能够被加入到关系依赖图中去,并最终添加到bundle中 (<span id="use">use属性</span>)  </li>
+</ol>
+<h5 id="安装style-loader-amp-css-loader"><a href="#安装style-loader-amp-css-loader" class="headerlink" title="安装style-loader &amp; css-loader"></a>安装style-loader &amp; css-loader</h5><p><code>npm install style-loader css-loader --save-v</code></p>
+<p><code>webpack3的语法</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test: /\.css$/,  //一般是正则表达式</span><br><span class="line">            use: [</span><br><span class="line">                &#123;</span><br><span class="line">                    loader: "style-loader"</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    loader: "css-loader?modules"  // ?modules 表示打开Css modules功能</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用一句通俗的话来讲吧..就是:  “喂,webpack编译器吗? 当你碰到require()语句或者 import语句中被解析为’.css’的路径时,在打包添加到bundle之前,先用  css-loader给他搞一下..然后再交给style-loader处理添加到style标签里..嵌入到JS代码中,恩,然后搞完再添加到bundle去”  </p>
+<p><strong>注:  模块的加载是从下到上的. 这里先加载css-loader 然后再加载style-loader</strong></p>
+<h6 id="安装-Babel"><a href="#安装-Babel" class="headerlink" title="安装 Babel"></a>安装 Babel</h6><p><code>npm install babel-core babel-preset-es2015 babel-loader --save-v</code>  </p>
+<ul>
+<li>babel-core 是Bebel的核心编译器,  </li>
+<li>babel-preset-es2015 是一个配置文件,我们可以把 ES2015的代码转化成ES5    </li>
+<li>babel-loader 用来编译JS文件</li>
+</ul>
+<p>修改<code>package.json</code>  在其中添加一个”babel”键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;babel&quot;: &#123;</span><br><span class="line">        &quot;presets&quot;: &#123;</span><br><span class="line">            &quot;es2015&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Rule"><a href="#Rule" class="headerlink" title="Rule"></a>Rule</h4><p>Rule 能够根据rule筛选出来的模块对其应用loader</p>
+<p>每个规则可以分为三部分，   条件（condition），结果（result），嵌套规则（nested rule）</p>
+<h4 id="Rule-Conditions-规则条件"><a href="#Rule-Conditions-规则条件" class="headerlink" title="Rule Conditions (规则条件)"></a>Rule Conditions (规则条件)</h4><p>条件有两种输入值   </p>
+<ol>
+<li>resource：请求文件的绝对路径。它根据resolve规则解析</li>
+<li>issuer: 被请求资源（requested the resource）的模块文件的绝对路径。是导入的位置</li>
+</ol>
+<p>resource 有4个属性对其匹配 ：  </p>
+<ol>
+<li><code>test</code>  ：使用正则表达式匹配loader所处理的文件的拓展名</li>
+<li><code>include</code> ：添加必须处理的文件/文件夹</li>
+<li><code>exclude</code>： 屏蔽不需要处理的文件/文件夹</li>
+<li><code>resource</code></li>
+</ol>
+<p>条件可以是其中之一： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test: <span class="regexp">/\.js$/</span> <span class="comment">// 使用正则表达式</span></span><br><span class="line">exclude: <span class="regexp">/node_modules/</span>  <span class="comment">//屏蔽拉黑node_modules此文件夹...</span></span><br></pre></td></tr></table></figure>
+<h4 id="Rule-result"><a href="#Rule-result" class="headerlink" title="Rule result"></a>Rule result</h4><p>rule result 只在 rule condition 匹配时使用</p>
+<p>用 <a href="#use">use</a>属性</p>
+<h3 id="dev-tool"><a href="#dev-tool" class="headerlink" title="dev-tool"></a>dev-tool</h3><p>dev-tool : 开发者辅助调试工具 </p>
+<p><code>string</code> 默认值: <code>false</code></p>
+<p>选择一种source-map来增强调试过程,以下各种选先的构建和重构建速度不同..</p>
+<h4 id="source-map是什么"><a href="#source-map是什么" class="headerlink" title="source-map是什么?"></a>source-map是什么?</h4><blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html" target="_blank" rel="noopener">阮一峰的文章</a> source-map是一个信息文件, 里面存储着位置信息,转换后的代码的每一个位置,所对应的转换前的位置.  出错的时候, 工具报错(浏览器控制台)将直接显示原始代码,而不是转换后的代码.    </p>
+</blockquote>
+<p>source-map 文件可以存储位置信息,存储转换前的所有变量名和属性名, 存储转换前的文件.   </p>
+<p><strong>两个文件的各个位置是如何一一对应的?</strong></p>
+<p>source-map 文件也有一个属性用来存储转换前文件跟转换后文件的对应信息,如(对应的行号, 位置对应,)  </p>
+<p>在位置对应里,每个位置使用5位,表示5个字段, 分别表示</p>
+<ul>
+<li>这个位置在(转换后的代码)的第几列, </li>
+<li>这个位置属于转换前的文件的哪一个文件. </li>
+<li>这个位置属于转换前代码的第几行, </li>
+<li>这个位置属于转换前代码的第几列, </li>
+<li>这个位置属于转换前的所有变量和属性名的哪一个.   </li>
+</ul>
+<p>简单了解了这个东西,不深入去探讨..等到以后用到的话,再去进一步学习.</p>
+<p><img src="http://osuuzm0m8.bkt.clouddn.com/webpack.png" alt="Alt text">  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devtool: <span class="string">'cheap-eval-source-map'</span></span><br></pre></td></tr></table></figure>
+<p>我在开发环境下是使用这个的, 报错有对应的行号提示,构建,重构建速度也快,相比较于eval, eval映射到的是转换后的代码,所以没有行号提示. 综合起来还是 <code>&quot;cheap-eval-source-map&quot;</code>比较合适..生产环境下我使用<code>&quot;cheap-source-map&quot;</code></p>
+<h3 id="devServer-（开发服务器）"><a href="#devServer-（开发服务器）" class="headerlink" title="devServer （开发服务器）"></a>devServer （开发服务器）</h3><p>webpack-dev-server 由webpack提供的一个本地开发服务器，可以让浏览器监测代码的修改，并自动刷新修改后的结果，提高效率。<br>webpack-dev-server.. 个人觉得最方便的就是自动刷新 &amp; 热重载<br><code>语法</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">	contentBase； path.join(__dirname, <span class="string">'src'</span>), <span class="comment">// 告知本地服务器从哪里提供内容.</span></span><br><span class="line">	historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">	port: <span class="number">5555</span>  <span class="comment">//默认是8080端口,可自定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在配置了开发服务器的话, 开发过程中监测着代码文件,当代码文件发生变化时, 可以自动刷新,重新构建网页.  </p>
+<p>但是过于频繁的刷新,当你的项目比较大时,reload页面需要等待的时间就比较长了,所以,dev-server还可以设置开启热替代.可以利用 插件 Hot Module Replacement 来实现.  模块热替换在程序运行时对模块修改,添加或者删除时,不需要重新加载整个页面,只更新改变内容.  </p>
+<p>有两种方式可以启用模块热替换,</p>
+<ul>
+<li><p>在 <code>webpack.config.js</code>文件中,</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new webpack.HotModuleReplacement()  //new一个HotModuleReplacement对象</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">devServer: &#123;</span><br><span class="line">    ...</span><br><span class="line">    inline: true, //采用inline模式.而不是iframe模式</span><br><span class="line">    hot: true    //开启热替换</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样需要写的东西太对,所以我还是通过第二种方式, CLI命令行添加参数来开启</p>
+<p>所以我还是用第二种方式来开启..</p>
+</li>
+<li><p>CLI添加参数.  顺便把这段开启webpack的代码写到<code>package.json</code>的 <code>&quot;scripts&quot;</code>键上,  如下</p>
+<p>添加参数 <code>--line --hot</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">	"dev": "webpack-dev-server --inline --hot --env=dev --open"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接在终端运行 <code>npm run dev</code>就可以开启开发服务器了.带有热重载的,不过此时热重载还没生效,因为还需要配置点其他东西.  </p>
+</li>
+</ul>
+<p>还需要修改的东西</p>
+<p>修改entry入口数组,</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  main: [</span><br><span class="line">      'webpack/hot/only-dev-server',  //在热更新失败后,需要采取手动刷新</span><br><span class="line">      'webpack-dev-server/client?http://127.0.0.1:5555/',  //资源服务器,我这里是本地服务器localhost,如果需要远程服务器的资源就相应的更改就好了.</span><br><span class="line">      './src/index.js'   //入口文件</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>index.js</code> (入口JS文件)  </p>
+<p>为了让html文件也可以采用热替换,需要把html当作一个模块来引入到<code>index.js</code>内</p>
+<p><code>index.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'./index.tpl.html'</span>);</span><br></pre></td></tr></table></figure>
+<p>也要在rules新建一个一个规则  </p>
+<p>html-loader需要先install</p>
+<p><code>npm install html-loader --save-v</code></p>
+<p><code>webpack.config.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">            use: [<span class="string">"html-loader"</span>]  <span class="comment">//使用html-loader,将html内容存为js字符串.  </span></span><br><span class="line">          						  <span class="comment">//遇到  require ('./index.tpl.html') </span></span><br><span class="line">          						  <span class="comment">//index.tpl.html的内容会被转成一个Js字符串,合并到JS文件中</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>index.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(moduel.hot) &#123;</span><br><span class="line">	<span class="comment">//module.hot.accept(dependencies, callback); //如果某个模块热替换后需要调用回调函数的就需要写这个.</span></span><br><span class="line">	<span class="built_in">module</span>.hot.accept(<span class="string">'./a.js'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"change a.js"</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">    <span class="comment">//如果是某人index.js的所有模块都采用热替换的话,则只需写</span></span><br><span class="line">    <span class="comment">//module.hot.accept(); 这样所有模块都采用热替换.</span></span><br><span class="line">	<span class="built_in">module</span>.hot.decline(<span class="string">'./component.js'</span>); <span class="comment">//强制component.js的修改热更新失败,只能reload整个页面.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就已经可以实现热替换功能了,无论html,css,js etc.发生改变都会热替换那个模块,如果热替换失败的话,浏览器会自动刷新或者需要手动刷新,HMR会在控制台输出信息,可以查阅..</p>
+<h4 id="生产环境…-amp-开发环境…的配置文件"><a href="#生产环境…-amp-开发环境…的配置文件" class="headerlink" title="生产环境…&amp; 开发环境…的配置文件."></a>生产环境…&amp; 开发环境…的配置文件.</h4><p>呃…一开始我是没有注意到这个生产环境跟开发环境之间所引用的配置的文件需要区别的东西的,看了官方的文档才知道,生产环境跟开发环境所用的配置文件不是完全相同的,官网推荐的那种手动方式,分别使用webpack.dev.js 和 webpack.prod.js 去区别开发环境跟生产环境,由于两个文件重复的东西太多,所以感觉效率不是很好..(懒得写两个,其实几乎差不多的文件)</p>
+<p>google了下,找到了一个我个人比较喜欢也容易理解的方法..</p>
+<p><code>webpack.config.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生产环境需要用到的配置文件的内容</span></span><br><span class="line"><span class="keyword">const</span> prodConfig = &#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开发环境需要用到的配置文件的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">devConfig</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> config = &#123;</span><br><span class="line">      ...</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, prodConfig, config, &#123;<span class="attr">plugins</span>: prodConfig.plugins.concat(config.plugins)&#125;)</span><br><span class="line">  <span class="comment">/*采用 Object.assign的方法,把几个对象复制到一个空对象上,形成一个新对象,拥有两个对象所有属性,如果属性名,属性值以后面对象的值为准.(后面的对象的值覆盖掉前面对象的值.)  因为plugins是个数组,所以需要用concat方法来将两个对象的plugins数组连接起来.*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 再根据CLI时传的env的参数来确定使用什么环境下的配置文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">env</span>) </span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="string">"env is: "</span>,env);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(env === <span class="string">"dev"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> devConfig();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> prodConfig;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>package.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    	<span class="attr">"dev"</span>: <span class="string">"webpack-dev-server --inline --hot --env=dev --open"</span>,</span><br><span class="line">    	<span class="attr">"build"</span>: <span class="string">"rimraf build &amp;&amp; webpack -p --env=prod"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>rimraf</code>是用来每次build之前清空build文件夹的..</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install rimraf --save-v</span><br></pre></td></tr></table></figure>
+<p>这两天的webpack的入门学习大概就这些了(之前看了一些<a href="mailto:webpack@1.x" target="_blank" rel="noopener">webpack@1.x</a> 和@2,x的学习教程,然后发现webpack已经出到3 了,干脆直接去官网啃文档了,不过这文档,真的是有点晦涩啊….)…webpack对于SPA(单页面应用来说还是挺不错的..),(主要是模块化),如果是多页面应用的话,用gulp来打包,压缩文件会更方便.. 等缓一缓再去学习下gulp,  …等到….掌握了,再去考虑,鱼跟熊掌怎么兼得的问题了.   路漫漫其修远兮,前方道路远又远又远啊….</p>
+<blockquote>
+<p>参考网站: <a href="https://doc.webpack-china.org/" target="_blank" rel="noopener">webpack中文网</a></p>
+<p>​        <a href="http://www.cnblogs.com/stoneniqiu/p/6496425.html" target="_blank" rel="noopener">webpack模块热替换</a></p>
+<p>etc.. 有些也忘了…  </p>
+<p>呃 还有参考github上一些项目的issues的解决办法, 发现….呃….英文真的很重要阿…orz..</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端工程化/" rel="tag">#前端工程化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/18/in/" rel="next" title="Object.prototype.hasOwnProperty() 与 in操作符的比较">
+                <i class="fa fa-chevron-left"></i> Object.prototype.hasOwnProperty() 与 in操作符的比较
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/30/process/" rel="prev" title="Process">
+                Process <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="ChenPengTeng" />
+          <p class="site-author-name" itemprop="name">ChenPengTeng</p>
+          <p class="site-description motion-element" itemprop="description">Make your own way.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chenPt" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2912883091/profile" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-webpack"><span class="nav-number">1.1.</span> <span class="nav-text">安装 webpack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">2.</span> <span class="nav-text">webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#entry（入口文件）"><span class="nav-number">2.1.</span> <span class="nav-text">entry（入口文件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output-输出"><span class="nav-number">2.2.</span> <span class="nav-text">output (输出)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-模块"><span class="nav-number">2.3.</span> <span class="nav-text">module 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#module-rules"><span class="nav-number">2.3.1.</span> <span class="nav-text">module.rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loader又是什么"><span class="nav-number">2.3.2.</span> <span class="nav-text">loader又是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装style-loader-amp-css-loader"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">安装style-loader &amp; css-loader</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装-Babel"><span class="nav-number">2.3.2.1.1.</span> <span class="nav-text">安装 Babel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule"><span class="nav-number">2.3.3.</span> <span class="nav-text">Rule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule-Conditions-规则条件"><span class="nav-number">2.3.4.</span> <span class="nav-text">Rule Conditions (规则条件)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rule-result"><span class="nav-number">2.3.5.</span> <span class="nav-text">Rule result</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-tool"><span class="nav-number">2.4.</span> <span class="nav-text">dev-tool</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#source-map是什么"><span class="nav-number">2.4.1.</span> <span class="nav-text">source-map是什么?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#devServer-（开发服务器）"><span class="nav-number">2.5.</span> <span class="nav-text">devServer （开发服务器）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生产环境…-amp-开发环境…的配置文件"><span class="nav-number">2.5.1.</span> <span class="nav-text">生产环境…&amp; 开发环境…的配置文件.</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChenPengTeng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
