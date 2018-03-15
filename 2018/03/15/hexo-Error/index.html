@@ -15,6 +15,7 @@
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-cache" />
 
 
 
@@ -84,19 +85,21 @@
 
 
 
-<meta name="description" content="其实之前这个问题我也会遇到过，那时候是在Ubuntu系统下，只懂得说1234$ sudo hexo clean$ sudo hexo g$ sudo hexo s$ sudo hexo d 部署不成功？本地执行预览命令，发现没有问题，然后执行  1hexo g -d 也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的, INFO Deploy done: git 也">
+<meta name="description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo部署成功后全没显示新文章？">
+<meta property="og:title" content="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/hexo-Error/index.html">
 <meta property="og:site_name" content="Cpt&#39;s Blog">
-<meta property="og:description" content="其实之前这个问题我也会遇到过，那时候是在Ubuntu系统下，只懂得说1234$ sudo hexo clean$ sudo hexo g$ sudo hexo s$ sudo hexo d 部署不成功？本地执行预览命令，发现没有问题，然后执行  1hexo g -d 也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的, INFO Deploy done: git 也">
+<meta property="og:description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdk62vrq9j20o30g6abx.jpg">
-<meta property="og:updated_time" content="2018-03-15T08:13:40.739Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdkogtb06j20v30grq4t.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdnqs80o3j20u8066gm9.jpg">
+<meta property="og:updated_time" content="2018-03-15T13:06:34.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo部署成功后全没显示新文章？">
-<meta name="twitter:description" content="其实之前这个问题我也会遇到过，那时候是在Ubuntu系统下，只懂得说1234$ sudo hexo clean$ sudo hexo g$ sudo hexo s$ sudo hexo d 部署不成功？本地执行预览命令，发现没有问题，然后执行  1hexo g -d 也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的, INFO Deploy done: git 也">
+<meta name="twitter:title" content="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
+<meta name="twitter:description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg">
 
 
@@ -120,7 +123,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2018/03/15/hexo-Error/"/>
 
-  <title> Hexo部署成功后全没显示新文章？ | Cpt's Blog </title>
+  <title> Hexo部署成功后首页却没显示新文章，这是为什么呢？ | Cpt's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -248,7 +251,7 @@
             
             
               
-                Hexo部署成功后全没显示新文章？
+                Hexo部署成功后首页却没显示新文章，这是为什么呢？
               
             
           </h1>
@@ -288,15 +291,32 @@
       
 
       
-        <a id="more"></a>
-<p>其实之前这个问题我也会遇到过，那时候是在Ubuntu系统下，只懂得说<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo hexo clean</span><br><span class="line">$ sudo hexo g</span><br><span class="line">$ sudo hexo s</span><br><span class="line">$ sudo hexo d</span><br></pre></td></tr></table></figure></p>
-<h2 id="部署不成功？"><a href="#部署不成功？" class="headerlink" title="部署不成功？"></a>部署不成功？</h2><p>本地执行预览命令，发现没有问题，然后执行 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的, <code>INFO Deploy done: git</code> 也说明了部署操作成功了。<br>那么为什么会出现这个问题呢？</p>
+        <p>记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…<br><a id="more"></a></p>
+<p><br><br><br><br>其实之前这个问题我也一直遇到过，那时候还不是很了解浏览器缓存的机制，出现问题没有往这方面想，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo hexo clean</span><br><span class="line">$ sudo hexo g</span><br><span class="line">$ sudo hexo s</span><br><span class="line">$ sudo hexo d</span><br></pre></td></tr></table></figure></p>
+<h2 id="部署不成功？"><a href="#部署不成功？" class="headerlink" title="部署不成功？"></a>部署不成功？</h2><p>生成静态资源文件，本地执行预览命令，进入预览页面发现一切正常，然后执行部署，也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的。</p>
+<p><code>INFO Deploy done: git</code> 也说明了部署操作成功了。<br>那么为什么会出现这个问题呢？</p>
 <p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg" alt=""></p>
-<h2 id="排查问题"><a href="#排查问题" class="headerlink" title="排查问题"></a>排查问题</h2><p>上github查看chenpt.github.io这个repo，里面已经有最新的文章了。<br>我把本地预览时的端口号后面的路径复制，前面加上博客绑定的域名，发现可以访问这篇文章，<code>chenpt.cc/2018/03/13/title/#more</code>，可是直接进入chenpt.cc 首页没有显示文章，我想会不会是缓存的问题，我将地址发到微信上，用电脑微信打开，发现一切正常，文章也出现了，转过头打开控制台把chenpt.cc的缓存全清了，再部署一遍<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdk62vrq9j20o30g6abx.jpg" alt=""><br>打开控制台一看NetWork，发现进入网站所请求的资源都是来自浏览器缓存，<br>状态码都为200，<code>from disk cache</code> or <code>from memory cache</code>，所以这说明了，所有东西都是在客户端缓存请求的，实际上并没有发出http请求给服务器.（这里是github page）</p>
-<p>谷歌了一下发现 github Page有一个默认的刷新时间的</p>
+<h2 id="排查问题"><a href="#排查问题" class="headerlink" title="排查问题"></a>排查问题</h2><p>上github查看chenpt.github.io这个repo，里面已经有最新的文章了。<br>我把本地预览时的端口号后面的路径复制，前面加上博客绑定的域名（<code>chenpt.cc/2018/03/13/title/#more</code>），发现可以访问这篇文章，，可是直接进入chenpt.cc 首页没有显示文章，我想会不会是缓存的问题，我将地址发到微信上，用电脑微信打开，发现一切正常，文章也出现了，转过头打开控制台把chenpt.cc的缓存全清了，再部署一遍<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdk62vrq9j20o30g6abx.jpg" alt=""><br>打开控制台一看NetWork，发现进入网站所请求的资源都是来自浏览器缓存，<br>状态码都为200，<code>(from disk cache)</code> or <code>(from memory cache)</code>，这说明了，所有东西都是在客户端缓存请求的，实际上并没有发出http请求给服务器.（这里是github page）这就是<code>强缓存</code></p>
+<p>简单来说，浏览器缓存分为两种，<br>一种就是上面所说的<code>强缓存</code>，另外一种是<code>协商缓存</code>。</p>
+<p>1.强缓存：浏览器在加载资源时，首先会先根据首部信息（<code>Expires</code>和<code>Cache-Control</code>）来判断是否命中强缓存，如果命中，直接从浏览器缓存中将资源取出来，<strong>不会发送请求到服务器</strong>。</p>
+<p>2.协商缓存：在没有命中强缓存的前提下，浏览器会发送一个请求（带有一些跟协商缓存有关的首部）给服务器，服务器根据这些首部信息和所请求资源目前的一些header信息来比较验证这个资源是否命中，如果命中了，服务器会将这个请求返回，但是并不会返回这个资源的数据，而是告诉浏览器，资源没有变化，可以直接从浏览器缓存中加载这个资源。</p>
+<p>命中协商缓存返回的状态信息为<br><code>304 Not Modified</code></p>
+<p>3.共同点： <code>强缓存</code>和<code>协商缓存</code>的共同点是都是<code>从客户端缓存（浏览器缓存）中加载资源</code>，服务器并没有返回所请求的资源的数据.</p>
+<p>4.区别： 强缓存没有发送请求到服务器，协商缓存会发送请求到服务器。</p>
+<p>5.强缓存的控制首部为：<code>Expires</code>和<code>Cache-Control</code></p>
+<p>6.协商缓存的控制首部为：配对的[<code>Last-Modified</code>,<code>If-Modified-Since</code>] 和[<code>Etag</code>,<code>If-None-Match</code>]</p>
+<p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdkogtb06j20v30grq4t.jpg" alt=""></p>
+<p>所以，页面没有更新为最新的原因就是浏览器直接从强缓存中加载资源，</p>
+<p><code>Cache-Control: max-age=600</code>说明资源从第一次请求后，下次可以再次直接从缓存中加载的有限时间为600s，也就是10分钟，当你在这个时间内再次请求资源，浏览器首先判断这个资源是否命中了强缓存，若是命中了则直接从缓存中加载，所以整个页面还是之前缓存的资源，所以并没有请求新的资源，页面也就没有更新为最新状态了。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="Ctrl-F5强制刷新"><a href="#Ctrl-F5强制刷新" class="headerlink" title="Ctrl-F5强制刷新"></a>Ctrl-F5强制刷新</h3><p>最简单的一个解决办法就是Ctrl-F5强制刷新，这时请求头的Cache-Control：<code>no-cache</code><br><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdnqs80o3j20u8066gm9.jpg" alt=""></p>
+<p>no-cache并不是表示<code>不缓存</code>,而是表示强制确认缓存，意味着使用缓存前必须检查这个资源在服务端是否有更新.</p>
+<p>那就顺便说下<code>Cache-Control:no-store</code>吧.<br>它就比较简单理解了。就是字面意思<code>不储存</code>，表示禁止浏览器以及中间缓存储存任何版本的<code>返回响应信息</code>.每次用户请求资源时，都会完整的发一个请求，从服务器获得响应，之后浏览器和代理商都不得储存该响应信息.</p>
+<blockquote>
+<p>Pragma是 HTTP/1.0 定义的首部字段，请求中包含Pragma的效果跟在头部信息定义<code>Cache-Control: no-cache</code>效果一样，主要是为了兼容使用HTTP/1.0的客户端.不可以取代<code>Cache-Cortrol</code>.还有就是Pragma只在请求首部中使用，不会在响应首部使用。</p>
+</blockquote>
+<p><a href="https://www.google.com.hk/search?q=HTTP%E7%BC%93%E5%AD%98" target="_blank" rel="noopener">Google: Http缓存</a></p>
+<p>发现自己还需要再去深入理解缓存这一块的东西。得空再去看看，<br>下一篇笔记再做总结.</p>
 
       
     </div>
@@ -462,7 +482,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署不成功？"><span class="nav-number">1.</span> <span class="nav-text">部署不成功？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排查问题"><span class="nav-number">2.</span> <span class="nav-text">排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署不成功？"><span class="nav-number">1.</span> <span class="nav-text">部署不成功？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排查问题"><span class="nav-number">2.</span> <span class="nav-text">排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">4.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ctrl-F5强制刷新"><span class="nav-number">4.1.</span> <span class="nav-text">Ctrl-F5强制刷新</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
