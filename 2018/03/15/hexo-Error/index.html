@@ -87,23 +87,23 @@
 
 
 
-<meta name="description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
+<meta name="description" content="记录一次hexo博客部署引发的姿势学习.本文涉及到了缓存。早点发现这个原因，就不会用那么多时间来调试hexo部署了，事实证明，是缓存引起的。">
 <meta name="keywords" content="hexo,笔记,HTTP缓存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/hexo-Error/index.html">
-<meta property="og:site_name" content="Cpt&#39;s Blog">
-<meta property="og:description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
+<meta property="og:site_name" content="PTPTPT Blog">
+<meta property="og:description" content="记录一次hexo博客部署引发的姿势学习.本文涉及到了缓存。早点发现这个原因，就不会用那么多时间来调试hexo部署了，事实证明，是缓存引起的。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdk62vrq9j20o30g6abx.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdmzjox7aj20qn06oq40.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdkogtb06j20v30grq4t.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdnqs80o3j20u8066gm9.jpg">
-<meta property="og:updated_time" content="2018-03-15T18:14:09.043Z">
+<meta property="og:updated_time" content="2018-03-15T18:59:30.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
-<meta name="twitter:description" content="记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…">
+<meta name="twitter:description" content="记录一次hexo博客部署引发的姿势学习.本文涉及到了缓存。早点发现这个原因，就不会用那么多时间来调试hexo部署了，事实证明，是缓存引起的。">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg">
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title> Hexo部署成功后首页却没显示新文章，这是为什么呢？ | Cpt's Blog </title>
+  <title> Hexo部署成功后首页却没显示新文章，这是为什么呢？ | PTPTPT Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,12 +174,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cpt's Blog</span>
+        <span class="site-title">PTPTPT Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">Love life, Love Basketball, Love D-wade</h1>
+        <h1 class="site-subtitle" itemprop="description">Little FE</h1>
       
   </div>
 
@@ -286,7 +286,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cpt's Blog">
+      <meta itemprop="name" content="PTPTPT Blog">
     </span>
 
     
@@ -377,8 +377,8 @@
       
 
       
-        <p>记录一次hexo博客部署引发的姿势学习.嗯，就是姿势…<br><a id="more"></a></p>
-<p><br><br><br><br>其实之前这个问题我也一直遇到过，那时候还不是很了解浏览器缓存的机制，出现问题没有往这方面想，在Ubuntu下，我就直接了当的使用sudo权限模式进行操作…一般来说都是可行的.Blog也转到Windows了，所以也就没使用这种方法了.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo hexo clean</span><br><span class="line">$ sudo hexo g</span><br><span class="line">$ sudo hexo s</span><br><span class="line">$ sudo hexo d</span><br></pre></td></tr></table></figure></p>
+        <p>记录一次hexo博客部署引发的姿势学习.<br>本文涉及到了缓存。早点发现这个原因，就不会用那么多时间来调试hexo部署了，事实证明，是缓存引起的。<br><a id="more"></a></p>
+<p><br><br><br><br>其实之前这个问题我也一直遇到过，那时候还不是很了解浏览器缓存的机制，出现问题没有往这方面想，在Ubuntu下，我就直接了当的使用sudo权限模式进行操作…一般来说都是可行的.最近Blog也转到Windows了，所以也就没使用这种方法了.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo hexo clean</span><br><span class="line">$ sudo hexo g</span><br><span class="line">$ sudo hexo s</span><br><span class="line">$ sudo hexo d</span><br></pre></td></tr></table></figure></p>
 <h2 id="部署不成功？"><a href="#部署不成功？" class="headerlink" title="部署不成功？"></a>部署不成功？</h2><p>生成静态资源文件，本地执行预览命令，进入预览页面发现一切正常，然后执行部署，也没有报错，只是出现一堆警告而已，最后修改是已经提交到git remote仓库的。</p>
 <p><code>INFO Deploy done: git</code> 也说明了部署操作成功了。<br>那么为什么会出现这个问题呢？</p>
 <p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaiwn7k3kj20k60bxq4b.jpg" alt=""></p>
@@ -396,8 +396,9 @@
 <p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdkogtb06j20v30grq4t.jpg" alt=""></p>
 <p>所以，页面没有更新为最新的原因就是浏览器直接从强缓存中加载资源，</p>
 <p><code>Cache-Control: max-age=600</code>说明资源从第一次请求后，下次可以再次直接从缓存中加载的有限时间为600s，也就是10分钟，当你在这个时间内再次请求资源，浏览器首先判断这个资源是否命中了强缓存，若是命中了则直接从缓存中加载，所以整个页面还是之前缓存的资源，所以并没有请求新的资源，页面也就没有更新为最新状态了。</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="Ctrl-F5强制刷新"><a href="#Ctrl-F5强制刷新" class="headerlink" title="Ctrl-F5强制刷新"></a>Ctrl-F5强制刷新</h3><p>最简单的一个解决办法就是Ctrl-F5强制刷新，这时请求头的Cache-Control：<code>no-cache</code><br><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdnqs80o3j20u8066gm9.jpg" alt=""></p>
-<p>no-cache并不是表示<code>不缓存</code>,而是表示强制确认缓存，意味着使用缓存前必须检查这个资源在服务端是否有更新.</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="Ctrl-F5强制刷新"><a href="#Ctrl-F5强制刷新" class="headerlink" title="Ctrl-F5强制刷新"></a>Ctrl-F5强制刷新</h3><p>第一个解决办法就是Ctrl-F5强制刷新，这时请求头的Cache-Control：<code>no-cache</code><br><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fpdnqs80o3j20u8066gm9.jpg" alt=""><br>如果没有生效，那就把localStorage清空再刷新页面.（一般都是有效的，而不用打开控制台去清空当前页面缓存）</p>
+<h3 id="Clear-Storage"><a href="#Clear-Storage" class="headerlink" title="Clear Storage"></a>Clear Storage</h3><p>Chrome打开控制台<code>Application</code>,点击<code>clear site data</code>清除站点数据，然后刷新，应该就会出现最新页面了，如果没有出现，那可能就不是缓存的问题。自行google。</p>
+<h3 id="no-cache-amp-no-store"><a href="#no-cache-amp-no-store" class="headerlink" title="no-cache &amp; no-store"></a>no-cache &amp; no-store</h3><p>no-cache并不是表示<code>不缓存</code>,而是表示强制确认缓存，意味着使用缓存前必须检查这个资源在服务端是否有更新.</p>
 <p>那就顺便说下<code>Cache-Control:no-store</code>吧.<br>它就比较简单理解了。就是字面意思<code>不储存</code>，表示禁止浏览器以及中间缓存储存任何版本的<code>返回响应信息</code>.每次用户请求资源时，都会完整的发一个请求，从服务器获得响应，之后浏览器和代理商都不得储存该响应信息.</p>
 <blockquote>
 <p>Pragma是 HTTP/1.0 定义的首部字段，请求中包含Pragma的效果跟在头部信息定义<code>Cache-Control: no-cache</code>效果一样，主要是为了兼容使用HTTP/1.0的客户端.不可以取代<code>Cache-Cortrol</code>.还有就是Pragma只在请求首部中使用，不会在响应首部使用。</p>
@@ -554,6 +555,17 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ChenPt" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -577,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署不成功？"><span class="nav-number">1.</span> <span class="nav-text">部署不成功？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排查问题"><span class="nav-number">2.</span> <span class="nav-text">排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">4.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ctrl-F5强制刷新"><span class="nav-number">4.1.</span> <span class="nav-text">Ctrl-F5强制刷新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署不成功？"><span class="nav-number">1.</span> <span class="nav-text">部署不成功？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排查问题"><span class="nav-number">2.</span> <span class="nav-text">排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">4.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ctrl-F5强制刷新"><span class="nav-number">4.1.</span> <span class="nav-text">Ctrl-F5强制刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clear-Storage"><span class="nav-number">4.2.</span> <span class="nav-text">Clear Storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#no-cache-amp-no-store"><span class="nav-number">4.3.</span> <span class="nav-text">no-cache &amp; no-store</span></a></li></ol></li></ol></div>
             
 
           </div>
