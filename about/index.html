@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Document              @keyframes colorFul {             10% {                 transform: rotate(-40deg);                 transform: translateX(200px);                 color:antiq">
+<meta name="description" content="Document              @keyframes spot {             from{                 transform: translate(0px,0px)             }             to{                 transform: translate(300px,-">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PTPTPT Blog">
 <meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="PTPTPT Blog">
-<meta property="og:description" content="Document              @keyframes colorFul {             10% {                 transform: rotate(-40deg);                 transform: translateX(200px);                 color:antiq">
+<meta property="og:description" content="Document              @keyframes spot {             from{                 transform: translate(0px,0px)             }             to{                 transform: translate(300px,-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T19:30:24.612Z">
+<meta property="og:updated_time" content="2018-03-17T19:31:11.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PTPTPT Blog">
-<meta name="twitter:description" content="Document              @keyframes colorFul {             10% {                 transform: rotate(-40deg);                 transform: translateX(200px);                 color:antiq">
+<meta name="twitter:description" content="Document              @keyframes spot {             from{                 transform: translate(0px,0px)             }             to{                 transform: translate(300px,-">
 
 
 
@@ -285,25 +285,214 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        @keyframes colorFul {
-            10% {
-                transform: rotate(-40deg);
-                transform: translateX(200px);
-                color:antiquewhite
+        @keyframes spot {
+            from{
+                transform: translate(0px,0px)
             }
-            to {
-                color:aquamarine
+            to{
+                transform: translate(300px,-200px)
             }
         }
-        .about-title {
-            animation: colorFul 3s;
-            animation-iteration-count: infinite;
+        .container {
+            margin: 0 auto;
+            font-size: 14px;
         }
+        .spot {
+            display: block;
+            position: absolute;
+            font-size: 13px;
+            width: 1em;
+            height: 1em;
+            background-color: black;
+            animation: spot 2s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+        }
+        /* .spot::before{
+            content:'';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50% 50%;
+            background-color: aqua;
+        } */
+         
+        
     </style>
 </head>
 <body>
     <h1 class="about-title">Hello About</h1>
+    <!-- <div id="container">
+        <span class="spot"></span>
+    </div> -->
+    <canvas id="bg" width="800" height="800"></canvas>
 </body>
+    <script>
+        var canvas = document.getElementById("bg");
+        var ctx = canvas.getContext('2d');
+
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#000'
+        var percent = 0;
+        function animate(startX,startY) {
+                
+            ctx.clearRect( 0, 0, 800, 800 );
+            end = drawStands(100,80,500,100,20);
+            ctx.beginPath();
+
+            drawCurvePath( 
+                ctx,
+                [startX,startY],
+                end,
+                0.5,
+                percent
+            );
+
+            ctx.stroke();
+
+            percent = ( percent + 1 ) % 100;
+            
+        }
+        canvas.addEventListener('click',function(e){
+            console.log(e)
+            var a = animate.bind(null,e.offsetX,e.offsetY)
+            for(let i = 1; i<=100; i++) {
+                setTimeout(a,i*11);
+            }
+        });
+        animate();
+        /**
+        *   width:球板的宽度
+        *   height: 球板的高度
+        *   startX: 起点X值
+        *   startX: 起点Y值
+        *   angle:  球板的角度（平行四边形的角度）
+        */
+
+        function getEnd(width, height, startX, startY, angle) {
+            var mh = width * Math.sin(Math.PI/180 * angle),
+                mw = width * Math.cos(Math.PI/180 * angle),
+                circle_x_radius = width/4,  //椭圆X轴半径
+                circle_y_radius = circle_x_radius/2;
+
+            var result = [mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10];
+            
+            return result;
+        }
+
+        function drawStands(width, height, startX, startY, angle) {
+                var mh = width * Math.sin(Math.PI/180 * angle),
+                    mw = width * Math.cos(Math.PI/180 * angle),
+                    result;
+
+                var circle_x_radius = width/4,  //椭圆X轴半径
+                    circle_y_radius = circle_x_radius/2,    //椭圆Y轴半径
+                    temp = 5,   //用来决定杆子的宽度,与球板的下面的中心点比较.
+                    ganHeight = width;   //球架的杆子的高度.
+
+                //绘制球板
+                ctx.save();
+                ctx.strokeStyle = '#555';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(startX,startY);
+                ctx.lineTo(startX, height+startY);
+                ctx.lineTo(width+startX, height+ mh+startY);
+                ctx.lineTo(width+startX, mh+startY);
+                ctx.lineTo(startX,startY);
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore();
+                
+                //绘制球框
+                BezierEllipse1(ctx, mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10, circle_x_radius, circle_y_radius)
+            
+                //球架的杆
+                ctx.save();
+                ctx.beginPath();
+                ctx.strokeStyle = "#000";
+                ctx.lineWidth = 1.5;
+                ctx.moveTo(mw/2+startX-temp, mh/2+startY+height-Math.tan(Math.PI/180 * angle)*temp);
+                ctx.lineTo(mw/2+startX-temp, mh/2+startY+height+ganHeight-Math.tan(Math.PI/180 * angle)*temp);
+                ctx.lineTo(mw/2+startX+temp, mh/2+startY+height+ganHeight+Math.tan(Math.PI/180 * angle)*temp);
+                ctx.lineTo(mw/2+startX+temp,mh/2+startY+height+Math.tan(Math.PI/180 * angle)*temp);
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore()
+
+                //模拟球的轨迹
+                // ctx.moveTo(40,300);
+                // ctx.quadraticCurveTo((mw/2+startX-2-circle_x_radius/2+30)/2,40,mw/2+startX-2-circle_x_radius/2,mh/2+startY+height+circle_y_radius-10);
+                // ctx.stroke();
+                // ctx.save();
+
+                return result = [mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10];
+        }
+            //网上找的利用贝塞尔曲线来画椭圆的方法.
+        function BezierEllipse1(context, x, y, a, b){
+            //关键是bezierCurveTo中两个控制点的设置
+            //0.5和0.6是两个关键系数（在本函数中为试验而得）
+            var ox = 0.5 * a,
+                oy = 0.6 * b;
+            
+            context.save();
+            context.strokeStyle = "red"
+            context.lineWidth = 2.5;
+            context.translate(x, y);
+            context.beginPath();
+            //从椭圆纵轴下端开始逆时针方向绘制
+            context.moveTo(0, b); 
+            context.bezierCurveTo(ox, b, a, oy, a, 0);
+            context.bezierCurveTo(a, -oy, ox, -b, 0, -b);
+            context.bezierCurveTo(-ox, -b, -a, -oy, -a, 0);
+            context.bezierCurveTo(-a, oy, -ox, b, 0, b);
+            context.closePath();
+            context.stroke();
+            context.restore();
+            
+        };
+
+        /**
+        * 绘制一条曲线路径
+        * @param  {Object} ctx canvas渲染上下文
+        * @param  {Array<number>} start 起点
+        * @param  {Array<number>} end 终点
+        * @param  {number} curveness 曲度(0-1)
+        * @param  {number} percent 绘制百分比(0-100)
+        */
+        function drawCurvePath( ctx, start, end, curveness, percent ) {
+
+            var cp = [
+                ( start[ 0 ] + end[ 0 ] ) / 2 - ( start[ 1 ] - end[ 1 ] ) * curveness,
+                ( start[ 1 ] + end[ 1 ] ) / 2 - ( end[ 0 ] - start[ 0 ] ) * curveness
+            ];
+            
+            var t = percent / 100;
+            
+            var p0 = start;
+            var p1 = cp;
+            var p2 = end;
+            
+            var v01 = [ p1[ 0 ] - p0[ 0 ], p1[ 1 ] - p0[ 1 ] ];     // 向量<p0, p1>
+            var v12 = [ p2[ 0 ] - p1[ 0 ], p2[ 1 ] - p1[ 1 ] ];     // 向量<p1, p2>
+        
+            var q0 = [ p0[ 0 ] + v01[ 0 ] * t, p0[ 1 ] + v01[ 1 ] * t ];
+            var q1 = [ p1[ 0 ] + v12[ 0 ] * t, p1[ 1 ] + v12[ 1 ] * t ];
+            
+            var v = [ q1[ 0 ] - q0[ 0 ], q1[ 1 ] - q0[ 1 ] ];       // 向量<q0, q1>
+        
+            var b = [ q0[ 0 ] + v[ 0 ] * t, q0[ 1 ] + v[ 1 ] * t ];
+            
+            ctx.moveTo( p0[ 0 ], p0[ 1 ] );
+        
+            ctx.quadraticCurveTo( 
+                q0[ 0 ], q0[ 1 ],
+                b[ 0 ], b[ 1 ]
+            );
+        
+        }
+
+    </script>
 </html>
     
   </div>
