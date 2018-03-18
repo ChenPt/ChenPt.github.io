@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="继承," />
+  <meta name="keywords" content="Array," />
 
 
 
@@ -87,20 +87,20 @@
 
 
 
-<meta name="description" content="我是结合慕课和JS高级程序设计这本书去学习继承这部分的内容的。在慕课《JavaScript 深入浅出》那一教程的OOP（Object Oriented Programming 面向对象程序设计）章节。  原型链首先我们了解原型链。在ECMAScript中描述了原型链的概念，并将原型链作为实现继承的主要方法。123456function foo() &amp;#123;&amp;#125;foo.prototyp">
-<meta name="keywords" content="继承">
+<meta name="description" content="数组去重整理下数组去重的几种方法.">
+<meta name="keywords" content="Array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 继承 的学习笔记">
-<meta property="og:url" content="http://yoursite.com/2016/07/26/inherit/index.html">
+<meta property="og:title" content="数组去重">
+<meta property="og:url" content="http://yoursite.com/2018/03/18/数组去重/index.html">
 <meta property="og:site_name" content="PTPTPT Blog">
-<meta property="og:description" content="我是结合慕课和JS高级程序设计这本书去学习继承这部分的内容的。在慕课《JavaScript 深入浅出》那一教程的OOP（Object Oriented Programming 面向对象程序设计）章节。  原型链首先我们了解原型链。在ECMAScript中描述了原型链的概念，并将原型链作为实现继承的主要方法。123456function foo() &amp;#123;&amp;#125;foo.prototyp">
+<meta property="og:description" content="数组去重整理下数组去重的几种方法.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://note.youdao.com/yws/res/342/WEBRESOURCE0ae9a61d44df15812fcf1ae06d7dc33b">
-<meta property="og:updated_time" content="2016-07-25T17:22:50.688Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fph2vk21cbj20bg05tt8s.jpg">
+<meta property="og:updated_time" content="2018-03-18T09:31:59.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 继承 的学习笔记">
-<meta name="twitter:description" content="我是结合慕课和JS高级程序设计这本书去学习继承这部分的内容的。在慕课《JavaScript 深入浅出》那一教程的OOP（Object Oriented Programming 面向对象程序设计）章节。  原型链首先我们了解原型链。在ECMAScript中描述了原型链的概念，并将原型链作为实现继承的主要方法。123456function foo() &amp;#123;&amp;#125;foo.prototyp">
-<meta name="twitter:image" content="http://note.youdao.com/yws/res/342/WEBRESOURCE0ae9a61d44df15812fcf1ae06d7dc33b">
+<meta name="twitter:title" content="数组去重">
+<meta name="twitter:description" content="数组去重整理下数组去重的几种方法.">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fph2vk21cbj20bg05tt8s.jpg">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/26/inherit/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/18/数组去重/"/>
 
 
 
 
 
-  <title> JavaScript 继承 的学习笔记 | PTPTPT Blog </title>
+  <title> 数组去重 | PTPTPT Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/26/inherit/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/18/数组去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChenPengTeng">
@@ -294,7 +294,7 @@
             
             
               
-                JavaScript 继承 的学习笔记
+                数组去重
               
             
           </h2>
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-26T01:20:46+08:00">
-                2016-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T00:00:00+08:00">
+                2018-03-18
               </time>
             
 
@@ -373,31 +373,29 @@
       
 
       
-        <blockquote>
-<p>我是结合慕课和JS高级程序设计这本书去学习继承这部分的内容的。在慕课《JavaScript 深入浅出》那一教程的OOP（Object Oriented Programming 面向对象程序设计）章节。</p>
+        <h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><p>整理下数组去重的几种方法.</p>
+<a id="more"></a>
+<h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h2><p>先将数组<code>排序</code>，变量result存储结果数组，将原数组的每一项与结果数组的最后一项比较，如果不相等，则将其push进result数组。</p>
+<p>缺点，数组最终结果是有序的。如果不想要有序的结果，则采用二、三、四的实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var testArray = [6,6,3,4,5,1,7,4,1,2]</span><br><span class="line"></span><br><span class="line">Array.prototype.unique1 = function() &#123;</span><br><span class="line">    this.sort((a,b) =&gt; a-b);</span><br><span class="line">    var result = [];</span><br><span class="line"></span><br><span class="line">    this.forEach((e, idx) =&gt; &#123;</span><br><span class="line">        if(idx === 0) &#123;</span><br><span class="line">            result.push(e)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(e !== result[result.length-1]) &#123;</span><br><span class="line">            result.push(e)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//更加简便的写法.思路是一样的</span><br><span class="line">Array.prototype.unique2 = function() &#123;</span><br><span class="line"></span><br><span class="line">    return this.sort((a,b) =&gt; a-b).reduce((result, e) =&gt; &#123;</span><br><span class="line">        if(result.length === 0 || e !== result[result.length-1]) &#123;</span><br><span class="line">            result.push(e)</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;, [])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以利用数组的reduce方法来简写代码.</p>
+<h2 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h2><p>ES6。 只需要用一行代码. 很简洁.<br><code>Set</code>本身是一个构造函数，可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数来初始化.</p>
+<p>主要是利用的<code>Set</code>这个新的数据结构的特性，就是其内部成员的值都是唯一的，没有重复.<br>还有就是<code>Set</code>数据结构本身具有<code>Iterator</code>接口，说明<code>Set</code>数据结构是可遍历的.</p>
+<p>ES6的扩展运算符<code>...</code>可以将实现了<code>Iterator</code>接口的对象，转化为真正的数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = [...new Set(testArray)];</span><br></pre></td></tr></table></figure>
+<h2 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h2><p>利用indexOf()方法，返回在数组中找到第一个给定元素的索引值，如果没找到，则返回-1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique3 = function() &#123;</span><br><span class="line">    var result = [];</span><br><span class="line"></span><br><span class="line">    this.forEach((e, idx) =&gt; &#123;</span><br><span class="line">        if(result.length === 0 || result.indexOf(e) === -1) &#123;</span><br><span class="line">            result.push(e)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>内部利用Array.prototype的indexOf()方法，对待去重数组里的每一个元素，在result数组中寻找第一次出现的索引值，如果为-1，则说明该元素没有在result数组里，则将其添加到result数组里.</p>
+<h2 id="第四种"><a href="#第四种" class="headerlink" title="第四种"></a>第四种</h2><p>利用一个空对象来比较，用一个循环来遍历数组，每遍历到一个元素，就用这个元素作为key去对象中访问，如果访问得到的话，就说明重复了，反之，则把该元素加入到result数组中，并将此元素作为对象的属性，赋值为1。<br>这种办法虽然也是只用到了一次循环，可它也有局限性.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique4 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;,</span><br><span class="line">        result = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!obj[<span class="keyword">this</span>[i]]) &#123;</span><br><span class="line">            result.push(<span class="keyword">this</span>[i]);</span><br><span class="line">            obj[<span class="keyword">this</span>[i]] = <span class="number">1</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(obj)</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果测试数组的格式为[1, 2, 3, ‘1’, ‘2’, ‘3’]，如果我们想要的最终结果是[1, 2, 3, ‘1’, ‘2’, ‘3’],使用第四种办法得出的结果只会是[1, 2, 3]. 之所以出现这种情况，是因为JavaScript的对象的键类型只能为字符串.</p>
+<blockquote>
+<p>一个对象的属性名可以是任何有效的 JavaScript 字符串，或者<strong>可以被转换为字符串的任何类型</strong>，包括<strong>空字符串</strong>. —-<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects" target="_blank" rel="noopener">MDN</a></p>
 </blockquote>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>首先我们了解原型链。在ECMAScript中描述了原型链的概念，并将原型链作为实现继承的主要方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">foo.prototype.z = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> foo();</span><br><span class="line">obj.x = <span class="number">1</span>;</span><br><span class="line">obj.y = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://note.youdao.com/yws/res/342/WEBRESOURCE0ae9a61d44df15812fcf1ae06d7dc33b" alt="image"></h2><p>这边我们创建一个 foo构造函数，并创建了一个对象实例obj，对象obj的内部有一内部属性[[prototype]] （跟图中的[[proto]]是同一个东西） ，该属性是一个指针，因为是用new命令实例化对象，我们来回顾下new命令在使用时进行的操作.</p>
-<ol>
-<li>创建一个新的对象</li>
-<li>为这个新建对象进行[[prototype]]连接</li>
-<li>将this值绑定到这个新建对象上</li>
-<li>如果函数没有返回其他对象就返回这个对象</li>
-</ol>
-<p>执行new命令操作的第2步中，将对象obj的[[prototype]]属性，（它是一个指针） 指向到其对应的原型对象 foo.prototype</p>
-<p>foo.prototype 这个原型对象其内部也有一个[[prototype]]属性，指向Object.prototype<br>我们可以用isPrototypeOf()方法来确定对象之间是否存在这种关系</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo.prototype.isPrototypeOf(obj));               <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.isPrototypeOf(foo.prototype));  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>我们用原型对象的isPrototypeOf（ ）方法测试了obj和foo.prototype，<br>对象实例obj内部有一个指针指向foo.prototype 所以返回了true<br>因为foo.prototype内部有一个指针指向Object.prototype 所以返回了true</p>
-<p>Object.prototype 指向null，这条原型链的尽头就是Object.prototype<br>所以上图就是一个简单的完整的原型链~  明确了原型链是什么之后，我们就来了解如何利用原型链实现继承。</p>
-<hr>
-<h2 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h2><blockquote>
-<p>继承的本质在于重写原型对象，往往通过重写构造函数的原型对象去实现继承</p>
-</blockquote>
-<h3 id="实现继承的方法"><a href="#实现继承的方法" class="headerlink" title="实现继承的方法"></a>实现继承的方法</h3><h4 id="利用原型链"><a href="#利用原型链" class="headerlink" title="利用原型链"></a>利用原型链</h4><hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//继承了Human  以下两种方式都可以实现继承</span></span><br><span class="line">Person.prototype = <span class="keyword">new</span> Human();  <span class="comment">//新建一个Human的实例  ，并且Human的实例也指向了Human.prototype  。  所以Person.prototype也指向了Human.prototype</span></span><br><span class="line">Person.prototype = <span class="built_in">Object</span>.creat(Human.prototype);  <span class="comment">//较为理想的方法，创建一个空对象，并且规定此新建对象指向的对象原型为Human.prototype</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(proto, [ propertiesObject ]）  <span class="comment">//语法</span></span><br></pre></td></tr></table></figure>
-<p>Object.create() 方法创建一个拥有指定原型和若干个指定属性的对象。<br><strong>参数</strong><br>proto ： 一个对象，作为新建对象的原型<br>propertiesObject ： 可选。该参数对象是一组属性与值，<br>举个例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Human.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Human,</span><br><span class="line">    a: 99,</span><br><span class="line">    b: 100</span><br><span class="line">&#125;</span><br><span class="line">function Person() &#123;</span><br><span class="line">    <span class="keyword">this</span>.type = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = <span class="keyword">new</span> Human();   <span class="comment">//Person 继承了Human</span></span><br><span class="line">Person.prototype.getValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person1.a);</span><br><span class="line"><span class="built_in">console</span>.log(person2.getValue());</span><br><span class="line"><span class="comment">//首先从person2本身需找此方法，找不到再从person2的原型Person.prototype查找getValue方法，</span></span><br><span class="line"><span class="comment">//转而寻找Person.prototype所继承的Human原型对象，找到并引用。</span></span><br></pre></td></tr></table></figure></p>
-<p>利用原型链的确可以，但是我的上一篇笔记有说过，原型模式的问题是当构造函数含有引用类型值（如数组）的属性时，修改这种属性的值，所有实例共享属性，所有实例也会发生变化。这显然不是我们想要的</p>
+<p><img src="http://ww1.sinaimg.cn/large/ad9f1193gy1fph2vk21cbj20bg05tt8s.jpg" alt=""></p>
+<p>可以看到，后面的属性1,覆盖了前面的属性”1”，<code>temp</code>现在其实只有两个属性，<code>&quot;&quot;</code>和<code>&quot;1&quot;</code>.遍历对象的key，输出每个key的类型，发现都是string.说明就算是数字类型的键，JS内部还会把它转换成字符串.</p>
+<p>所以这种方法其实并不是很适用于一个既有数字又有字符串的数组.因为很可能会出现上面的情况.这也是这种方法的局限性.</p>
+<h2 id="第五种"><a href="#第五种" class="headerlink" title="第五种"></a>第五种</h2><p>利用两个循环来比较，这个效率没上面的其他实现方法高，这里就不写了.</p>
 
       
     </div>
@@ -421,7 +419,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/继承/" rel="tag"># 继承</a>
+            <a href="/tags/Array/" rel="tag"># Array</a>
           
         </div>
       
@@ -434,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/26/canvas/" rel="next" title="canvas元素的学习笔记">
-                <i class="fa fa-chevron-left"></i> canvas元素的学习笔记
+              <a href="/2018/03/15/hexo-Error/" rel="next" title="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
+                <i class="fa fa-chevron-left"></i> Hexo部署成功后首页却没显示新文章，这是为什么呢？
               </a>
             
           </div>
@@ -443,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/01/CscwPage-summary/" rel="prev" title="CscwPage总结">
-                CscwPage总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">1.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现继承"><span class="nav-number">3.</span> <span class="nav-text">实现继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现继承的方法"><span class="nav-number">3.1.</span> <span class="nav-text">实现继承的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用原型链"><span class="nav-number">3.1.1.</span> <span class="nav-text">利用原型链</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组去重"><span class="nav-number">1.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种"><span class="nav-number">2.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种"><span class="nav-number">3.</span> <span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种"><span class="nav-number">4.</span> <span class="nav-text">第三种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四种"><span class="nav-number">5.</span> <span class="nav-text">第四种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五种"><span class="nav-number">6.</span> <span class="nav-text">第五种</span></a></li></ol></div>
             
 
           </div>
