@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="PTPTPT Blog">
 <meta property="og:description" content="Document              @keyframes spot {             from{                 transform: translate(0px,0px)             }             to{                 transform: translate(300px,-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T19:34:03.573Z">
+<meta property="og:updated_time" content="2018-03-18T04:27:27.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PTPTPT Blog">
 <meta name="twitter:description" content="Document              @keyframes spot {             from{                 transform: translate(0px,0px)             }             to{                 transform: translate(300px,-">
@@ -321,25 +321,30 @@
     </style>
 </head>
 <body>
-    <h1 class="about-title">Hello About</h1>
+    <h1>click the blank</h1>
     <!-- <div id="container">
         <span class="spot"></span>
     </div> -->
-    <canvas id="bg" width="800" height="450"></canvas>
+    <canvas id="bg" width="700" height="450"></canvas>
 </body>
     <script>
         var canvas = document.getElementById("bg");
         var ctx = canvas.getContext('2d');
-
+        var percent = 0;
+        var ball = {
+            radius: 15,
+            x: 30,
+            y: 30,
+            color: 'rgb(247,99,10)'
+        }
         ctx.lineWidth = 2;
         ctx.strokeStyle = '#000'
-        var percent = 0;
-        function animate(startX,startY) {
-                
+        
+
+        function animate(startX,startY) { 
             ctx.clearRect( 0, 0, 800, 800 );
             end = drawStands(100,80,500,100,20);
             ctx.beginPath();
-
             drawCurvePath( 
                 ctx,
                 [startX,startY],
@@ -347,19 +352,33 @@
                 0.5,
                 percent
             );
-
             ctx.stroke();
 
             percent = ( percent + 1 ) % 100;
+            ctx.closePath();
             
         }
-        canvas.addEventListener('click',function(e){
+        function test (e) {
             console.log(e)
             var a = animate.bind(null,e.offsetX,e.offsetY)
             for(let i = 1; i<=100; i++) {
-                setTimeout(a,i*11);
+                var timer = setTimeout(a,i*11);
+            }   
+        }
+        canvas.addEventListener('click',throttle(test));
+
+        function throttle(fn) {
+            let canRun = true;
+            console.log(arguments);
+            return function() {
+                if(!canRun) return;
+                canRun = false;
+                fn.apply(this,arguments);
+                setTimeout(() => {
+                    canRun = true;
+                },1100)
             }
-        });
+        }
         animate();
         /**
         *   width:球板的宽度
@@ -369,15 +388,11 @@
         *   angle:  球板的角度（平行四边形的角度）
         */
 
-        function getEnd(width, height, startX, startY, angle) {
-            var mh = width * Math.sin(Math.PI/180 * angle),
-                mw = width * Math.cos(Math.PI/180 * angle),
-                circle_x_radius = width/4,  //椭圆X轴半径
-                circle_y_radius = circle_x_radius/2;
-
-            var result = [mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10];
-            
-            return result;
+        function drawBall(ball) {
+            ctx.fillStyle = ball.color;
+            ctx.arc(ball.x, ball.y,ball.radius, 0, Math.PI*2);
+            ctx.fill();
+            ctx.closePath();
         }
 
         function drawStands(width, height, startX, startY, angle) {
@@ -405,7 +420,7 @@
                 ctx.restore();
                 
                 //绘制球框
-                BezierEllipse1(ctx, mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10, circle_x_radius, circle_y_radius)
+                BezierEllipse1(ctx, mw/2+startX-2-circle_x_radius/2, mh/2+startY+height+circle_y_radius-10, circle_x_radius+5, circle_y_radius+2)
             
                 //球架的杆
                 ctx.save();
@@ -460,6 +475,7 @@
         * @param  {number} curveness 曲度(0-1)
         * @param  {number} percent 绘制百分比(0-100)
         */
+
         function drawCurvePath( ctx, start, end, curveness, percent ) {
 
             var cp = [
@@ -467,7 +483,7 @@
                 ( start[ 1 ] + end[ 1 ] ) / 2 - ( end[ 0 ] - start[ 0 ] ) * curveness
             ];
             
-            var t = percent / 100;
+            var t = percent / 80;
             
             var p0 = start;
             var p1 = cp;
@@ -483,12 +499,14 @@
         
             var b = [ q0[ 0 ] + v[ 0 ] * t, q0[ 1 ] + v[ 1 ] * t ];
             
-            ctx.moveTo( p0[ 0 ], p0[ 1 ] );
-        
-            ctx.quadraticCurveTo( 
-                q0[ 0 ], q0[ 1 ],
-                b[ 0 ], b[ 1 ]
-            );
+            // ctx.moveTo( p0[ 0 ], p0[ 1 ] );
+            ball.x = b[0],
+            ball.y = b[1]
+            drawBall(ball);
+            // ctx.quadraticCurveTo( 
+            //     q0[ 0 ], q0[ 1 ],
+            //     b[ 0 ], b[ 1 ]
+            // );
         
         }
 
