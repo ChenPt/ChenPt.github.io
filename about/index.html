@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="PTPTPT Blog">
 <meta property="og:description" content="Document                                click the blank                    var canvas = document.getElementById(&quot;bg&quot;);         var ctx = canvas.getContext(&apos;2d&apos;);         var perc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-18T05:25:04.068Z">
+<meta property="og:updated_time" content="2018-03-21T17:31:40.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PTPTPT Blog">
 <meta name="twitter:description" content="Document                                click the blank                    var canvas = document.getElementById(&quot;bg&quot;);         var ctx = canvas.getContext(&apos;2d&apos;);         var perc">
@@ -324,7 +324,6 @@
             
         }
         function test (e) {
-            console.log(e)
             var a = animate.bind(null,e.offsetX,e.offsetY)
             for(let i = 1; i<=100; i++) {
                 var timer = setTimeout(a,i*11);
@@ -334,7 +333,6 @@
 
         function throttle(fn) {
             let canRun = true;
-            console.log(arguments);
             return function() {
                 if(!canRun) return;
                 canRun = false;
@@ -447,11 +445,12 @@
                 ( start[ 0 ] + end[ 0 ] ) / 2 - ( start[ 1 ] - end[ 1 ] ) * curveness,
                 ( start[ 1 ] + end[ 1 ] ) / 2 - ( end[ 0 ] - start[ 0 ] ) * curveness
             ];
+            //cp为二次贝塞尔曲线的控制点.
             
             var t = percent / 80;
             
-            var p0 = start;
-            var p1 = cp;
+            var p0 = start; //起点
+            var p1 = cp;    
             var p2 = end;
             
             var v01 = [ p1[ 0 ] - p0[ 0 ], p1[ 1 ] - p0[ 1 ] ];     // 向量<p0, p1>
@@ -464,14 +463,11 @@
         
             var b = [ q0[ 0 ] + v[ 0 ] * t, q0[ 1 ] + v[ 1 ] * t ];
             
-            // ctx.moveTo( p0[ 0 ], p0[ 1 ] );
+
             ball.x = b[0],
             ball.y = b[1]
             drawBall(ball);
-            // ctx.quadraticCurveTo( 
-            //     q0[ 0 ], q0[ 1 ],
-            //     b[ 0 ], b[ 1 ]
-            // );
+
         
         }
 
@@ -525,7 +521,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -534,7 +530,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -543,7 +539,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
