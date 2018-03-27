@@ -1,0 +1,764 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据库,课设," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/chenpt.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="数据库课设笔记">
+<meta name="keywords" content="数据库,课设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="database">
+<meta property="og:url" content="http://yoursite.com/database/index.html">
+<meta property="og:site_name" content="PTPTPT Blog">
+<meta property="og:description" content="数据库课设笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T07:55:53.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="database">
+<meta name="twitter:description" content="数据库课设笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":14,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/database/"/>
+
+
+
+
+
+  <title> database | PTPTPT Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PTPTPT Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Little FE</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChenPengTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PTPTPT Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                database
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T00:00:00+08:00">
+                2018-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>数据库课设笔记</p>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这学期学习了 <strong>数据库系统</strong> 这门课程, 学习到了关于数据库的知识, 因为课堂学习的是SQL的知识, 做实验也是用到SQL Server, 所以这次课设就选择了MySQL来写,首先当然是知识准备咯.MySQL的语法跟SQL的语法一样.在课堂学习的时候就学习了SQL的语法，先用phpStudy的adminer把数据库及表建立起来，学习Node.js连接MySQL，前端利用ElementUI来快速完成页面的设计.</p>
+<h1 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h1><p>因为选题选的是学生信息管理系统,而做实验的时候就有类似的学生信息系统,所以参考实验并加以修改,总共有 Student,Department,Speciality,Class,Course,SC,User7个表.<br>其他就不着重讲了.课程设计报告有详细的。</p>
+<h1 id="服务端笔记"><a href="#服务端笔记" class="headerlink" title="服务端笔记"></a>服务端笔记</h1><p>Express采用<strong>body-parser</strong>,一个HTTP请求体解析中间件,使用这个模块可以解析JSON、Raw、文本、URL-encoded格式的请求体.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>引入mysql<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="keyword">var</span> conn mysql.createConnection(models.mysql);  <span class="comment">//建立MySQL连接</span></span><br></pre></td></tr></table></figure></p>
+<p>设计API接口 (使用express的router)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = express.Router(); <span class="comment">//引入 router</span></span><br><span class="line"></span><br><span class="line">router.post(<span class="string">'/selectAll'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> params = req.body;  <span class="comment">// 前端传过来的参数，进行提取</span></span><br><span class="line">    <span class="keyword">var</span> sql = <span class="string">`SELECT * from <span class="subst">$&#123;params.table&#125;</span>`</span>; <span class="comment">//使用模版字符串写SQL语句</span></span><br><span class="line">    <span class="comment">//进行对数据库的查询</span></span><br><span class="line">    conn.query(sql, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(err);</span><br><span class="line">            res.send(<span class="number">500</span>,&#123;<span class="attr">error</span>: <span class="string">'出错: '</span>+err.sqlMessage&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(result) &#123;</span><br><span class="line">            res.json(&#123;</span><br><span class="line">                code: <span class="number">200</span>,</span><br><span class="line">                data: result,</span><br><span class="line">                msg: <span class="string">'查询成功'</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当查询出错时，一直不了解怎么返回提示信息给前端，后面观察服务端的node进程，<code>console.log(err)</code> 打印了一些出错信息，有个字段为sqlMessage，所以就把这个<code>err.sqlMessage</code>直接传给前端，有时候出错信息比较复杂，这个因为时间原因没有对这个信息再进行加工，就直接服务端数据库报什么错就直接传给前端了，有点不妥。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(result) &#123;</span><br><span class="line">    <span class="keyword">if</span>(result.affectedRows&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            code: <span class="number">200</span>,</span><br><span class="line">            data: result,</span><br><span class="line">            msg: <span class="string">'删除成功'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(result.affectedRows ===<span class="number">0</span>)&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            code: <span class="number">200</span>,</span><br><span class="line">            data: result,</span><br><span class="line">            msg: <span class="string">'操作没有影响，删除的数据原本就不存在~'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">设计*修改*，*删除*API时，对数据库的操作成功会返回个result对象，其有个affectedRows字段，代表操作后所影响到的表的数据的行数，当`</span>affectedRows &gt; <span class="number">0</span><span class="string">`说明数据有受到影响，而其为0时，则操作并没有对数据库产生修改，从侧面说明欲修改、删除的数据本就不存在，返回`</span>操作没有影响到数据库，数据不存在<span class="string">`给前端。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 前端笔记</span></span><br><span class="line"><span class="string">前端采用Vue-cli 和 vue-router</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">整个的管理页面只有中间的具体操作的部分是根据管理模块的类型来按需显示的，又因为管理模块的类型已经在`</span>side-menu<span class="string">`分得很清楚，点击菜单栏上的某个管理模块，中间的部分就显示特定的内容。一开始没有什么思路，后面查阅到`</span>ElementUI<span class="string">`的`</span>el-menu<span class="string">`支持路由模式，点击菜单栏的item，路由会跳转到特定的此item的index值，如下</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>html</span><br><span class="line">&lt;el-menu</span><br><span class="line">router &gt;</span><br><span class="line">&lt;el-submenu index=<span class="string">"1"</span>&gt;</span><br><span class="line">		&lt;template slot=<span class="string">"title"</span>&gt;</span><br><span class="line">		&lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-icon-setting"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">		&lt;span&gt;学生管理&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>template&gt;</span><br><span class="line">		&lt;el-menu-item index=<span class="string">"add_student"</span> v-<span class="keyword">if</span>=<span class="string">"userType === 2"</span>&gt;新增学生&lt;<span class="regexp">/el-menu-item&gt;</span></span><br><span class="line"><span class="regexp">		&lt;el-menu-item index="search_student" &gt;查询学生信息&lt;/</span>el-menu-item&gt;</span><br><span class="line">		&lt;el-menu-item index=<span class="string">"update_student"</span> v-<span class="keyword">if</span>=<span class="string">"userType === 2"</span>&gt;修改学生信息&lt;<span class="regexp">/el-menu-item&gt;</span></span><br><span class="line"><span class="regexp">        &lt;el-menu-item index="delete_student" v-if="userType === 2"&gt;删除学生&lt;/</span>el-menu-item&gt;</span><br><span class="line">	&lt;<span class="regexp">/el-submenu&gt;</span></span><br><span class="line"><span class="regexp">&lt;el-menu&gt;</span></span><br></pre></td></tr></table></figure>
+<p>所以就在<code>management</code>组件，也就是管理页面上检测路由变化来进行中间部分特定模块的显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// management.vue</span><br><span class="line">export default &#123;</span><br><span class="line">    ...</span><br><span class="line">    watch: &#123;</span><br><span class="line">        $route(to, from)&#123;</span><br><span class="line">            this.index = to.params.msg;</span><br><span class="line">			this.table = this.index.split(&apos;_&apos;)[1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>index 可以获取到跳转后的路由，似<code>add_student</code> ， 从而 <code>this.table</code>的值为 student，所以中间的数据部分显示student表。</p>
+<h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/课设/" rel="tag"># 课设</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Summer-Vacation/" rel="next" title="2017-NW-暑假-奇妙之旅">
+                <i class="fa fa-chevron-left"></i> 2017-NW-暑假-奇妙之旅
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/事件流/" rel="prev" title="事件流">
+                事件流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="ChenPengTeng" />
+          <p class="site-author-name" itemprop="name">ChenPengTeng</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ChenPt" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计过程"><span class="nav-number">2.</span> <span class="nav-text">设计过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务端笔记"><span class="nav-number">3.</span> <span class="nav-text">服务端笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#心得"><span class="nav-number">4.</span> <span class="nav-text">心得</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChenPengTeng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
