@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.">
+<meta name="description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.补充了 event.currentTarget 和 event.target的区别.">
 <meta name="keywords" content="JavaScript,Event">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件流">
-<meta property="og:url" content="http://yoursite.com/事件流/index.html">
+<meta property="og:url" content="http://chenpt.cc/事件流/index.html">
 <meta property="og:site_name" content="PTPTPT Blog">
-<meta property="og:description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.">
+<meta property="og:description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.补充了 event.currentTarget 和 event.target的区别.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaccm8hakj21hc0u0e82.jpg">
-<meta property="og:updated_time" content="2018-03-12T16:23:47.607Z">
+<meta property="og:updated_time" content="2018-04-10T02:47:06.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件流">
-<meta name="twitter:description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.">
+<meta name="twitter:description" content="最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.补充了 event.currentTarget 和 event.target的区别.">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ad9f1193gy1fpaccm8hakj21hc0u0e82.jpg">
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/事件流/"/>
+  <link rel="canonical" href="http://chenpt.cc/事件流/"/>
 
 
 
 
 
-  <title> 事件流 | PTPTPT Blog </title>
+  <title> 事件流 | PTPTPT Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +159,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/事件流/">
+    <link itemprop="mainEntityOfPage" href="http://chenpt.cc/事件流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChenPengTeng">
@@ -373,7 +373,7 @@
       
 
       
-        <p>最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.</p>
+        <p>最近在复习，回过头看了一下事件流，将自己的理解和总结写一下.<br>补充了 event.currentTarget 和 event.target的区别.</p>
 <a id="more"></a>
 <h2 id="何为事件流"><a href="#何为事件流" class="headerlink" title="何为事件流"></a>何为事件流</h2><p>事件流是从页面中接受事件的顺序。</p>
 <p>当你点击了页面的一个按钮的同时，你也点击了包括此按钮的容器元素，甚至也可以认为点击了整个页面。<br>为了解决这种情况，事件流的概念就诞生了。</p>
@@ -388,7 +388,7 @@
 <li><code>&lt;button&gt; -&gt; &lt;div&gt; -&gt; &lt;body&gt; -&gt; &lt;html&gt; -&gt; Document对象 -&gt; window对象</code></li>
 </ol>
 <p>采用捕获模型，事件会以如下的顺序传播 </p>
-<ol>
+<ol start="2">
 <li><code>window对象 -&gt; Document对象 -&gt; &lt;html&gt; -&gt; &lt;body&gt; -&gt; &lt;div&gt; -&gt; &lt;button&gt;</code></li>
 </ol>
 <h2 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h2><p><code>DOM2级事件</code>规定事件流包括三个阶段： <code>事件捕获阶段</code>、<code>处于目标阶段</code>、<code>事件冒泡阶段</code></p>
@@ -402,7 +402,18 @@
 <p><code>事件委托</code>利用了事件冒泡，只需要指定一个事件处理程序，就可以管理某一类型的事件。</p>
 <h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>当你想给每一个li都添加一个事件处理程序时，你需要添加三个事件处理程序，当你添加的事件处理程序过多时，页面的性能会受到影响。</p>
 <p>使用事件委托，只需在DOM树中<strong>尽量最高的层次</strong>上添加一个事件处理程序，可以有效地减少事件处理程序的数量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=<span class="string">"List"</span>&gt;</span><br><span class="line">    &lt;li id=<span class="string">"item1"</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li id="item2"&gt;2&lt;/</span>li&gt;</span><br><span class="line">    &lt;li id=<span class="string">"item3"</span>&gt;<span class="number">3</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">&lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">"List"</span>);</span><br><span class="line"></span><br><span class="line">list.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target = event.target || event.srcElement; <span class="comment">//兼容写法</span></span><br><span class="line">    <span class="comment">//事件对象的target属性为一个Element对象，保存着当前点击的目标元素的信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(target)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure></p>
-<p>下一篇预告. promise</p>
+<h2 id="event对象的-currentTarget-和-target的区别"><a href="#event对象的-currentTarget-和-target的区别" class="headerlink" title="event对象的 currentTarget 和 target的区别"></a>event对象的 currentTarget 和 target的区别</h2><p>当多个有明显父子关系的元素都绑定了同一事件时，currentTarget指向的是当前事件绑定的元素，event.target 指的是触发了该绑定事件的目标元素。<br>cunrrentTarget发生在事件流的整个阶段（捕获，目标阶段，冒泡），event.target只是指在目标阶段发生的元素。</p>
+<p>通过下面的例子来理解</p>
+<p>addEventListener的第三个参数useCapture的默认值为false，也就是说在冒泡阶段接收到该事件。</p>
+<p>当点击inner元素时，事件从inner元素从下往上冒泡传播，所以currentTarget一开始指向的是inner，随着事件冒泡传播，currentTarget指向了其他绑定了Click事件的元素。只有在目标阶段的时候，<code>event.target</code> 才会等于 <code>event.currentTarget</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">currentTarget: inner; target: inner</span><br><span class="line">currentTarget: fourth; target: inner</span><br><span class="line">currentTarget: third; target: inner</span><br><span class="line">currentTarget: second; target: inner</span><br><span class="line">currentTarget: first; target: inner</span><br></pre></td></tr></table></figure>
+<p>如果把所有监听函数在注册时<code>useCapture</code>参数的值置为true，则说明在捕获阶段接收事件，则inner的父级元素会先于inner接收到click事件，所以结果打印顺序会颠倒，变为下面所示。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">currentTarget: first; target: inner</span><br><span class="line">currentTarget: second; target: inner</span><br><span class="line">currentTarget: third; target: inner</span><br><span class="line">currentTarget: fourth; target: inner</span><br><span class="line">currentTarget: inner; target: inner</span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="500" src="//jsfiddle.net/ChenPt/yLmjv7fj/27/embedded/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
 
       
     </div>
@@ -451,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/EventEmitter/" rel="prev" title="实现EventEmitter">
-                实现EventEmitter <i class="fa fa-chevron-right"></i>
+              <a href="/hexo-Error/" rel="prev" title="Hexo部署成功后首页却没显示新文章，这是为什么呢？">
+                Hexo部署成功后首页却没显示新文章，这是为什么呢？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,7 +536,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -534,7 +545,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -543,7 +554,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -562,6 +573,15 @@
                     <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:cptlove82@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
                 </a>
               </span>
             
@@ -589,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何为事件流"><span class="nav-number">1.</span> <span class="nav-text">何为事件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-number">2.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-number">3.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件流"><span class="nav-number">4.</span> <span class="nav-text">DOM事件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理程序"><span class="nav-number">5.</span> <span class="nav-text">事件处理程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托"><span class="nav-number">6.</span> <span class="nav-text">事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实践"><span class="nav-number">6.1.</span> <span class="nav-text">实践</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何为事件流"><span class="nav-number">1.</span> <span class="nav-text">何为事件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-number">2.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-number">3.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件流"><span class="nav-number">4.</span> <span class="nav-text">DOM事件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理程序"><span class="nav-number">5.</span> <span class="nav-text">事件处理程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托"><span class="nav-number">6.</span> <span class="nav-text">事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实践"><span class="nav-number">6.1.</span> <span class="nav-text">实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event对象的-currentTarget-和-target的区别"><span class="nav-number">7.</span> <span class="nav-text">event对象的 currentTarget 和 target的区别</span></a></li></ol></div>
             
 
           </div>
@@ -731,7 +751,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -770,6 +790,8 @@
   
 
   
+  
+
 
   
 

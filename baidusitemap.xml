@@ -4,7 +4,124 @@
 
     
   <url>
-    <loc>http://yoursite.com/netlify/</loc>
+    <loc>http://chenpt.cc/%E6%B5%AE%E7%82%B9%E6%95%B0%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-04-17T18:10:07.656Z</lastmod>
+    <data>
+        <display>
+        <title>浮点数和JavaScript的Number</title>
+        <pubTime>2018-04-17T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>浮点数</tag>
+         
+        <tag>计算机基础</tag>
+         
+        <tag>Number</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机基础" url="http://chenpt.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenpt.cc/%E5%BA%9F%E8%AF%9D/</loc>
+    <lastmod>2018-04-11T17:39:02.489Z</lastmod>
+    <data>
+        <display>
+        <title>随便记点什么</title>
+        <pubTime>1997-10-13T16:00:00.000Z</pubTime>
+        
+        <tag>废话</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活笔记" url="http://chenpt.cc/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenpt.cc/%E4%BC%AA%E5%85%83%E7%B4%A0/</loc>
+    <lastmod>2018-04-10T06:11:16.476Z</lastmod>
+    <data>
+        <display>
+        <title>伪元素知识整理</title>
+        <pubTime>2018-04-09T16:00:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>伪元素</tag>
+         
+        <tag>transition</tag>
+         
+        <tag>transform</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://chenpt.cc/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenpt.cc/%E4%BA%8B%E4%BB%B6%E6%B5%81/</loc>
+    <lastmod>2018-04-10T02:47:06.065Z</lastmod>
+    <data>
+        <display>
+        <title>事件流</title>
+        <pubTime>2018-03-11T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Event</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenpt.cc/%E7%90%86%E8%A7%A3cdn/</loc>
+    <lastmod>2018-04-02T16:53:41.829Z</lastmod>
+    <data>
+        <display>
+        <title>对CDN的一个个人理解</title>
+        <pubTime>2018-04-01T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+        <tag>前端优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="CDN" url="http://chenpt.cc/categories/CDN/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://chenpt.cc/netlify/</loc>
     <lastmod>2018-03-26T16:14:49.277Z</lastmod>
     <data>
         <display>
@@ -18,7 +135,7 @@
          
            
              
-              <breadCrumb title="HTTPS" url="http://yoursite.com/categories/HTTPS/"/>
+              <breadCrumb title="HTTPS" url="http://chenpt.cc/categories/HTTPS/"/>
           
         </display>
     </data>
@@ -26,7 +143,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/SSL/</loc>
+    <loc>http://chenpt.cc/SSL/</loc>
     <lastmod>2018-03-26T09:35:32.247Z</lastmod>
     <data>
         <display>
@@ -40,7 +157,7 @@
          
            
              
-              <breadCrumb title="HTTPS" url="http://yoursite.com/categories/HTTPS/"/>
+              <breadCrumb title="HTTPS" url="http://chenpt.cc/categories/HTTPS/"/>
           
         </display>
     </data>
@@ -48,7 +165,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E5%AD%A6%E4%B9%A0Vue%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <loc>http://chenpt.cc/%E5%AD%A6%E4%B9%A0Vue%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     <lastmod>2018-03-22T16:34:53.279Z</lastmod>
     <data>
         <display>
@@ -62,7 +179,7 @@
          
            
              
-              <breadCrumb title="Vue" url="http://yoursite.com/categories/Vue/"/>
+              <breadCrumb title="Vue" url="http://chenpt.cc/categories/Vue/"/>
           
         </display>
     </data>
@@ -71,7 +188,7 @@
     
     
   <url>
-    <loc>http://yoursite.com/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</loc>
+    <loc>http://chenpt.cc/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</loc>
     <lastmod>2018-03-18T09:31:59.806Z</lastmod>
     <data>
         <display>
@@ -83,7 +200,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -91,7 +208,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/hexo-Error/</loc>
+    <loc>http://chenpt.cc/hexo-Error/</loc>
     <lastmod>2018-03-15T19:24:53.933Z</lastmod>
     <data>
         <display>
@@ -107,7 +224,7 @@
          
            
              
-              <breadCrumb title="Bug记录" url="http://yoursite.com/categories/Bug%E8%AE%B0%E5%BD%95/"/>
+              <breadCrumb title="Bug记录" url="http://chenpt.cc/categories/Bug%E8%AE%B0%E5%BD%95/"/>
           
         </display>
     </data>
@@ -115,7 +232,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/database/</loc>
+    <loc>http://chenpt.cc/database/</loc>
     <lastmod>2018-03-15T07:55:53.148Z</lastmod>
     <data>
         <display>
@@ -129,7 +246,7 @@
          
            
              
-              <breadCrumb title="database" url="http://yoursite.com/categories/database/"/>
+              <breadCrumb title="database" url="http://chenpt.cc/categories/database/"/>
           
         </display>
     </data>
@@ -137,7 +254,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/EventEmitter/</loc>
+    <loc>http://chenpt.cc/EventEmitter/</loc>
     <lastmod>2018-03-15T07:50:53.737Z</lastmod>
     <data>
         <display>
@@ -151,7 +268,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -159,29 +276,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E4%BA%8B%E4%BB%B6%E6%B5%81/</loc>
-    <lastmod>2018-03-12T16:23:47.607Z</lastmod>
-    <data>
-        <display>
-        <title>事件流</title>
-        <pubTime>2018-03-11T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>Event</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/webpack/</loc>
+    <loc>http://chenpt.cc/webpack/</loc>
     <lastmod>2018-03-12T15:19:58.208Z</lastmod>
     <data>
         <display>
@@ -193,7 +288,7 @@
          
            
              
-              <breadCrumb title="webpack" url="http://yoursite.com/categories/webpack/"/>
+              <breadCrumb title="webpack" url="http://chenpt.cc/categories/webpack/"/>
           
         </display>
     </data>
@@ -201,7 +296,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/Summer-Vacation/</loc>
+    <loc>http://chenpt.cc/Summer-Vacation/</loc>
     <lastmod>2017-08-13T23:47:04.616Z</lastmod>
     <data>
         <display>
@@ -211,7 +306,7 @@
          
            
              
-              <breadCrumb title="日常生活" url="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
+              <breadCrumb title="日常生活" url="http://chenpt.cc/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
           
         </display>
     </data>
@@ -219,7 +314,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/process/</loc>
+    <loc>http://chenpt.cc/process/</loc>
     <lastmod>2017-07-30T13:21:21.659Z</lastmod>
     <data>
         <display>
@@ -229,7 +324,7 @@
          
            
              
-              <breadCrumb title="Node.js" url="http://yoursite.com/categories/Node-js/"/>
+              <breadCrumb title="Node.js" url="http://chenpt.cc/categories/Node-js/"/>
           
         </display>
     </data>
@@ -237,7 +332,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/in/</loc>
+    <loc>http://chenpt.cc/in/</loc>
     <lastmod>2017-07-18T07:50:03.469Z</lastmod>
     <data>
         <display>
@@ -249,7 +344,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -257,7 +352,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/second-Monday/</loc>
+    <loc>http://chenpt.cc/second-Monday/</loc>
     <lastmod>2017-07-18T04:22:18.761Z</lastmod>
     <data>
         <display>
@@ -271,7 +366,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -279,7 +374,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/CscwPage-summary/</loc>
+    <loc>http://chenpt.cc/CscwPage-summary/</loc>
     <lastmod>2017-07-17T05:15:54.677Z</lastmod>
     <data>
         <display>
@@ -293,7 +388,7 @@
          
            
              
-              <breadCrumb title="项目总结" url="http://yoursite.com/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
+              <breadCrumb title="项目总结" url="http://chenpt.cc/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -301,7 +396,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/currying&partial-application/</loc>
+    <loc>http://chenpt.cc/currying-partial-application/</loc>
     <lastmod>2017-07-17T05:15:31.417Z</lastmod>
     <data>
         <display>
@@ -315,7 +410,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -323,7 +418,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/Js-Function/</loc>
+    <loc>http://chenpt.cc/Js-Function/</loc>
     <lastmod>2017-07-17T05:15:13.053Z</lastmod>
     <data>
         <display>
@@ -337,7 +432,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -345,7 +440,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/summer-css3-canvas/</loc>
+    <loc>http://chenpt.cc/summer-css3-canvas/</loc>
     <lastmod>2017-07-17T05:14:42.285Z</lastmod>
     <data>
         <display>
@@ -361,7 +456,7 @@
          
            
              
-              <breadCrumb title="2017暑假" url="http://yoursite.com/categories/2017%E6%9A%91%E5%81%87/"/>
+              <breadCrumb title="2017暑假" url="http://chenpt.cc/categories/2017%E6%9A%91%E5%81%87/"/>
           
         </display>
     </data>
@@ -369,7 +464,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016-summer/</loc>
+    <loc>http://chenpt.cc/2016-summer/</loc>
     <lastmod>2017-07-17T05:13:43.645Z</lastmod>
     <data>
         <display>
@@ -385,7 +480,7 @@
          
            
              
-              <breadCrumb title="生活笔记" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="生活笔记" url="http://chenpt.cc/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -393,7 +488,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/Ubuntu-install-Shadowsocks/</loc>
+    <loc>http://chenpt.cc/Ubuntu-install-Shadowsocks/</loc>
     <lastmod>2017-07-17T05:13:00.009Z</lastmod>
     <data>
         <display>
@@ -407,7 +502,7 @@
          
            
              
-              <breadCrumb title="Ubuntu" url="http://yoursite.com/categories/Ubuntu/"/>
+              <breadCrumb title="Ubuntu" url="http://chenpt.cc/categories/Ubuntu/"/>
           
         </display>
     </data>
@@ -415,7 +510,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/prototype-mode/</loc>
+    <loc>http://chenpt.cc/prototype-mode/</loc>
     <lastmod>2017-07-17T04:57:01.001Z</lastmod>
     <data>
         <display>
@@ -427,7 +522,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -435,7 +530,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/hexo-notes/</loc>
+    <loc>http://chenpt.cc/hexo-notes/</loc>
     <lastmod>2017-07-17T04:56:31.612Z</lastmod>
     <data>
         <display>
@@ -447,7 +542,7 @@
          
            
              
-              <breadCrumb title="blog笔记" url="http://yoursite.com/categories/blog%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="blog笔记" url="http://chenpt.cc/categories/blog%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -455,7 +550,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/canvas/</loc>
+    <loc>http://chenpt.cc/canvas/</loc>
     <lastmod>2017-07-13T15:37:00.130Z</lastmod>
     <data>
         <display>
@@ -467,7 +562,7 @@
          
            
              
-              <breadCrumb title="HTML 5" url="http://yoursite.com/categories/HTML-5/"/>
+              <breadCrumb title="HTML 5" url="http://chenpt.cc/categories/HTML-5/"/>
           
         </display>
     </data>
@@ -475,7 +570,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/inherit/</loc>
+    <loc>http://chenpt.cc/inherit/</loc>
     <lastmod>2016-07-25T17:22:50.688Z</lastmod>
     <data>
         <display>
@@ -487,7 +582,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="http://yoursite.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="http://chenpt.cc/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -495,7 +590,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/hello-world/</loc>
+    <loc>http://chenpt.cc/hello-world/</loc>
     <lastmod>2016-07-25T16:52:36.603Z</lastmod>
     <data>
         <display>

@@ -1,0 +1,870 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,伪元素,transition,transform," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/chenpt.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="对于CSS伪元素的一个整理">
+<meta name="keywords" content="CSS,伪元素,transition,transform">
+<meta property="og:type" content="article">
+<meta property="og:title" content="伪元素知识整理">
+<meta property="og:url" content="http://chenpt.cc/伪元素/index.html">
+<meta property="og:site_name" content="PTPTPT Blog">
+<meta property="og:description" content="对于CSS伪元素的一个整理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/ad9f1193gy1fq7h4jvct1j20gs0h5dh0.jpg">
+<meta property="og:updated_time" content="2018-04-10T06:11:16.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="伪元素知识整理">
+<meta name="twitter:description" content="对于CSS伪元素的一个整理">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/ad9f1193gy1fq7h4jvct1j20gs0h5dh0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":14,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chenpt.cc/伪元素/"/>
+
+
+
+
+
+  <title> 伪元素知识整理 | PTPTPT Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PTPTPT Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Little FE</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://chenpt.cc/伪元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChenPengTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PTPTPT Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                伪元素知识整理
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T00:00:00+08:00">
+                2018-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于CSS伪元素的一个整理<br><a id="more"></a></p>
+<h2 id="伪元素-amp-伪类"><a href="#伪元素-amp-伪类" class="headerlink" title="伪元素 &amp; 伪类"></a>伪元素 &amp; 伪类</h2><p>之前开始学习CSS的时候，会把伪类和伪元素搞混，其实现在想想，两者的区别还是挺大的。</p>
+<p>伪类： 根据元素的状态或特征来筛选出元素，并添加特定的样式。</p>
+<p>如 link, visited, hover,active, focus, first-child， :nth-child(参数), :not(参数)等等</p>
+<p><code>lang</code>是向带有指定lang属性的元素添加样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"test"</span>&gt;</span>word text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">p:lang(test) &#123;</span><br><span class="line">    color: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>伪元素： 为存在于DOM上的某个元素进行补充。<strong>伪元素是不存在于文档树中的。</strong></p>
+<p>因为某些低版本浏览器识别不了两个冒号的伪元素，为了兼容所以有些伪元素是既可以写一个冒号，也可以写两个冒号，不过有些伪元素是只能写两个冒号。</p>
+<p>整理如下表格</p>
+<style>
+table th:first-of-type {
+    width: 150px;
+}
+</style>
+
+<table>
+<thead>
+<tr>
+<th>伪元素</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> ::before/:before</td>
+<td>在某个元素前面补充</td>
+</tr>
+<tr>
+<td> ::after/:after</td>
+<td>在某个元素后面补充</td>
+</tr>
+<tr>
+<td> ::first-line/:first-line</td>
+<td>选中块级元素的第一行</td>
+</tr>
+<tr>
+<td> ::firse-letter/:first-letter</td>
+<td>选中块级元素的第一行的第一个字母</td>
+</tr>
+<tr>
+<td> ::selection</td>
+<td>应用于文档中被选中的部分 此伪元素可用的CSS属性比较少，只有<code>color</code>,<code>background-color</code>,<code>cursor</code>,<code>text-decoration</code>，<code>outline</code>,<code>text-shadow</code></td>
+</tr>
+</tbody>
+</table>
+<p>针对::before和::after，内部有个<code>content</code>属性，其他伪元素没有<code>content</code>属性</p>
+<table>
+<thead>
+<tr>
+<th>值类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>使用引号包括一段字符串，会在伪元素的内容中添加该字符串</td>
+</tr>
+<tr>
+<td>attr()</td>
+<td>调用当前元素的属性, 如href, src, data-* 等</td>
+</tr>
+<tr>
+<td>url()</td>
+<td>引用媒体文件</td>
+</tr>
+<tr>
+<td>counter()</td>
+<td>调用计数器</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.test &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	width: 30px;</span><br><span class="line">	height: 30px;</span><br><span class="line">	border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.test::before &#123;</span><br><span class="line">    content: url(https://d33wubrfki0l68.cloudfront.net/ce84d63e8b6c6c4899487845ca6c442cc9cb8bc2/7f4e2/img/avatar.jpg);</span><br><span class="line">    position: absolute;</span><br><span class="line">	top: 100%;</span><br><span class="line">	left: 100%;</span><br><span class="line">	display: block;</span><br><span class="line">	width: 50px;</span><br><span class="line">	height: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/ad9f1193gy1fq7h4jvct1j20gs0h5dh0.jpg" style="width: 40%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%);"></p>
+<p>可以看到使用url来添加图片，这个图片是直接加载原图，因为是伪元素，所以修改不了这个图片的样式。<br>伪元素的width和height针对的是::before/::after生成的匿名替换元素，而不是其中的<code>content</code></p>
+<p>如果是想通过伪元素来添加图片，并且可以设置图片大小，我们可以通过给::before/::after 添加<code>background-imgae</code>属性来添加图片，并通过<code>background-size</code>等方法来设置图片的样式。</p>
+<p>下面针对::before 和 ::after的一些知识进行总结</p>
+<h2 id="before-amp-after的一些知识总结"><a href="#before-amp-after的一些知识总结" class="headerlink" title="::before &amp; ::after的一些知识总结"></a>::before &amp; ::after的一些知识总结</h2><p>通常我使用得比较多的是<code>::before</code>和<code>::after</code>这两个伪元素，而且我也习惯了写两个冒号，来分辨伪类和伪元素，没考虑兼容问题。</p>
+<h3 id="伪元素怎么通过JS修改样式"><a href="#伪元素怎么通过JS修改样式" class="headerlink" title="伪元素怎么通过JS修改样式"></a>伪元素怎么通过JS修改样式</h3><p>已经定义好的伪元素，实际上是不存在于文档树里的，虽然可以通过<code>window.getComputedStyle(test,&quot;::after&quot;)</code>来取得伪元素的属性，可是是修改不了的。使用Document对象的方法（document.querySelector()等等）是不能取得该伪元素的，那我们在进行某个操作后想修改伪元素的样式，可以通过给伪元素添加一个新的Class名来实现。</p>
+<p>代码如下</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/ChenPt/78h0udw1/15/embedded/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>这里伪元素的content属性我们是使用<code>attr</code>方法来使用当前元素的<code>data-content</code>的值。</p>
+<p>我们可以通过修改<code>data-content</code>的值来修改伪元素的content的值</p>
+<p>将上面JSfiddle <code>JavaScript</code>里注释的那行代码去掉就可以看到效果如下</p>
+<iframe width="100%" height="200" src="//jsfiddle.net/ChenPt/78h0udw1/18/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h3 id="伪元素的妙用"><a href="#伪元素的妙用" class="headerlink" title="伪元素的妙用"></a>伪元素的妙用</h3><h4 id="结合伪类-transition-制作过渡动画"><a href="#结合伪类-transition-制作过渡动画" class="headerlink" title="结合伪类, transition, 制作过渡动画"></a>结合伪类, transition, 制作过渡动画</h4><p>写了几个demo，伪元素配合CSS3的transition来实现一些过渡性的动画效果.</p>
+<iframe width="100%" height="600" src="//jsfiddle.net/ChenPt/665phyg3/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p><a href="https://jsfiddle.net/ChenPt/665phyg3/" target="_blank" rel="noopener">代码在JSFiddle</a></p>
+<p>这里只贴出效果图</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>之前一般清除浮动有两种方式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"float-wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clear-fix"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.float-wrap</span>&#123;</span><br><span class="line">	<span class="comment">/* overflow: auto; */</span>  <span class="comment">/* 第一种， 在父元素内使用overflow属性*/</span></span><br><span class="line">	<span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">	<span class="attribute">list-style-type</span>: none;</span><br><span class="line">	<span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">margin-left</span>: <span class="number">6%</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 第二种， 在最后一个浮动元素后添加新元素，使用clear: both*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clear-fix</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一般我们清除浮动都是在父元素设置overflow属性或者是添加一个空白div在末尾，使用<code>clear:both</code>。</p>
+<p>而现在可以使用<code>::after</code>来对第二种方法进行改进，不用写多余的div。</p>
+<p>利用<code>::after</code>给浮动元素的<strong>父元素</strong>添加一个:after伪元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 第三种，利用:after给父元素添加一个:after伪元素*/</span></span><br><span class="line"><span class="selector-class">.float-wrap</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">clear</span>: both;  <span class="comment">/* 就是用这个来清除浮动 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="未完"><a href="#未完" class="headerlink" title="未完"></a>未完</h3><p>以后还有新的玩法的话会再补充</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/伪元素/" rel="tag"># 伪元素</a>
+          
+            <a href="/tags/transition/" rel="tag"># transition</a>
+          
+            <a href="/tags/transform/" rel="tag"># transform</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/理解cdn/" rel="next" title="对CDN的一个个人理解">
+                <i class="fa fa-chevron-left"></i> 对CDN的一个个人理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/浮点数问题及其原理/" rel="prev" title="浮点数和JavaScript的Number">
+                浮点数和JavaScript的Number <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.jpg"
+               alt="ChenPengTeng" />
+          <p class="site-author-name" itemprop="name">ChenPengTeng</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ChenPt" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:cptlove82@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪元素-amp-伪类"><span class="nav-number">1.</span> <span class="nav-text">伪元素 &amp; 伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#before-amp-after的一些知识总结"><span class="nav-number">2.</span> <span class="nav-text">::before &amp; ::after的一些知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素怎么通过JS修改样式"><span class="nav-number">2.1.</span> <span class="nav-text">伪元素怎么通过JS修改样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素的妙用"><span class="nav-number">2.2.</span> <span class="nav-text">伪元素的妙用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结合伪类-transition-制作过渡动画"><span class="nav-number">2.2.1.</span> <span class="nav-text">结合伪类, transition, 制作过渡动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.2.2.</span> <span class="nav-text">清除浮动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未完"><span class="nav-number">2.3.</span> <span class="nav-text">未完</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChenPengTeng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
